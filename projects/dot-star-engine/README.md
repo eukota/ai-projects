@@ -2,7 +2,7 @@
 
 ## Summary
 
-TBD.
+Dot Star Engine is a related implementation repository that may serve as an experiment, runtime harness, scheduler prototype, orchestration engine, or early AIOS realization.
 
 ## Implementation Repositories
 
@@ -10,4 +10,6 @@ TBD.
 
 ## Open Questions
 
-- TBD
+- Is Dot Star Engine primarily an AIOS runtime, scheduler, orchestration engine, or narrower experiment?
+- Which AIOS layer should it prove first?
+- What belongs in the implementation repo versus this design repo?

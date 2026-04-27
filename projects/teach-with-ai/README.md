@@ -26,14 +26,12 @@ DATA 322 is the first concrete example because it is real, bounded, and credible
 ## Key Documents
 
 - [DATA 322 Overview](data-322/overview.md)
-- [DATA 322 Class Agent MVP](data-322/class-agent-mvp.md)
+- [DATA 322 AI Assistant MVP](data-322/ai-assistant-mvp.md)
 - [DATA 322 Course Support Ideas](data-322/course-support.md)
 - [DATA 322 Open Questions](data-322/open-questions.md)
-- [Original Class Agent Context Transfer](context-transfer/class-agent-context-transfer.md)
 
 ## Relationship to Teaching AI
 
 Teaching AI is the broad movement.
 
 Teach With AI is a flagship implementation path. If DATA 322 works, it becomes an artifact that demonstrates the broader argument.
-

@@ -50,7 +50,7 @@ Users often work across chat interfaces, coding agents, local models, hosted fro
 
 ## Implementation Repositories
 
-- TBD
+- [eukota/dot-star-engine](https://github.com/eukota/dot-star-engine) may become an implementation experiment or runtime path for AIOS.
 
 ## Open Questions
 

@@ -1,4 +1,4 @@
-# DATA 322 Class Agent MVP
+# DATA 322 AI Assistant MVP
 
 ## Goal
 
