@@ -12,3 +12,4 @@ Dot Star Engine may be an implementation experiment, runtime harness, scheduler 
 
 AIOS is the architecture. Dot Star Engine is potentially one implementation path.
 
+Repository: [eukota/dot-star-engine](https://github.com/eukota/dot-star-engine)

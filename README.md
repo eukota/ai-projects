@@ -35,4 +35,3 @@ Executable software must live in separate repositories and be referenced from th
 - `projects/aios/`
 - `projects/dot-star-engine/`
 - `projects/class-agent/`
-- `projects/constellation/`
