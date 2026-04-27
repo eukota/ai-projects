@@ -1,10 +1,49 @@
-Proprietary License
+Eukota Public Internal Use License v1.0
 
-Copyright (c) 2026 Darrell
+Copyright (c) 2026 Darrell Ross
 
-All rights reserved.
+## Purpose
 
-This repository and its contents are proprietary and confidential. No permission is granted to copy, modify, distribute, sublicense, publish, use, or create derivative works from any part of this repository except with the prior written permission of the copyright holder.
+This license is intended to make the materials in this repository publicly available for learning, experimentation, feedback, and internal use while reserving commercial productization rights to the copyright holder.
 
-Access to this private repository does not grant any license or ownership rights.
+This is not an open source license as defined by the Open Source Initiative.
+
+## Permission Granted
+
+Permission is granted to view, copy, fork, modify, adapt, and use the materials in this repository for:
+
+- Personal use
+- Educational use
+- Research use
+- Hobby use
+- Evaluation
+- Internal organizational use
+- Internal business operations
+- Internal tools, prototypes, workflows, and experiments
+
+Attribution is appreciated but not required for the permitted uses above.
+
+## Permission Not Granted
+
+Permission is not granted to sell, license, sublicense, package, host as a service, include in a paid product, use as the basis of a paid offering, or otherwise monetize this repository, its materials, or derivative works externally without prior written permission from the copyright holder.
+
+Examples of uses that require prior written permission include:
+
+- Selling a product or service substantially based on these materials
+- Offering hosted access to a derivative system
+- Packaging these materials into paid training, consulting, or courseware
+- Including substantial portions of these materials in a commercial product
+- Reselling, sublicensing, or redistributing derivative works for profit
+
+## Feedback and Collaboration
+
+If these materials influence your work, you are encouraged to share what you learn, open an issue or discussion, or contact the copyright holder about collaboration.
+
+## No Transfer of Ownership
+
+Access to this repository does not transfer ownership of any intellectual property. All rights not expressly granted by this license are reserved.
+
+## No Warranty
+
+The materials are provided "as is", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and noninfringement.
 

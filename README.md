@@ -20,6 +20,12 @@ Executable software must live in separate repositories and be referenced from th
 - Keep implementation repositories clean and focused.
 - Provide a reusable project structure for future ideas.
 
+## License
+
+This repository is public for learning, experimentation, feedback, and internal use under the [Eukota Public Internal Use License v1.0](LICENSE).
+
+External monetization requires permission. See [Commercial Use](COMMERCIAL_USE.md).
+
 ## Repository Map
 
 - `AI_CONTEXT.md` - How agents should understand and use this repo.
@@ -34,4 +40,5 @@ Executable software must live in separate repositories and be referenced from th
 
 - `projects/aios/`
 - `projects/dot-star-engine/`
-- `projects/class-agent/`
+- `projects/teaching-ai/`
+- `projects/teach-with-ai/`
