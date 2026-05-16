@@ -38,55 +38,74 @@ Each week is 3 hours of lecture/lab contact. Four-unit course.
 
 ---
 
-### UNIT 0 — Setup and Orientation (Weeks 1–2)
+### UNIT 0 — Introduction (Weeks 1–3)
 
-**Week 1 — The ML Landscape and the AI-Assisted Workflow**
-
-Topics:
-- What machine learning is and is not: a taxonomy of problem types
-- The data science pipeline as an end-to-end loop (obtain → wrangle → model → evaluate → communicate)
-- How DATA 322 fits in the major: what DATA 271 gave you, what this course adds
-- Introduction to the course AI agent: capabilities, appropriate use, trust calibration
-- Lab: Environment setup (Python, Jupyter/VS Code, sklearn, pandas, matplotlib); first AI-assisted notebook walkthrough
-
-Standalone vs. project arc: **Standalone setup week** — establishes the baseline everyone needs before any project work.
+Three dedicated weeks before any modeling begins. The goal: every student has a working environment, a baseline comfort with AI-assisted workflows, an understanding of the collaboration norms for this course, and a solid review of the DATA 271 material the rest of the semester depends on.
 
 ---
 
-**Week 2 — Data for ML: Pipelines, Splits, and Feature Engineering**
+**Week 1 — Environment Setup and the AI-Assisted Workflow**
 
 Topics:
-- Training / validation / test splits — why and how; data leakage as a career-ending mistake
-- Feature engineering: encoding, scaling, imputation
-- Exploratory data analysis before modeling (not just before visualization)
-- Using the AI agent for EDA: generating summary statistics, asking "what looks wrong?"
-- Lab: End-to-end warm-up pipeline on a clean dataset (California wildfire perimeter data or similar)
+- Environment setup: Python (conda/venv), Jupyter notebooks, Git, VS Code or Cursor — hands-on, not assumed
+- Version control hygiene: a repository for this course from day one
+- Introduction to the course AI agent: what it is, how to access it, what it will and won't do
+- GitHub Copilot and ChatGPT as reference tools: framing the landscape of AI assistance students will encounter
+- Lab: Every student leaves with a working environment, a personal course repo, and a first AI-assisted notebook that loads a dataset
 
-Standalone vs. project arc: **Bridge week** — completes foundational setup; provides the scaffold all three projects will reuse.
+Standalone vs. project arc: **Intro Unit Week 1** — no modeling content; pure setup and orientation.
 
 ---
 
-### UNIT 1 — Supervised Learning (Weeks 3–8)
-#### Project 1: Classification on a Real-World Tabular Dataset (Weeks 3–7)
+**Week 2 — AI Collaboration Norms and the Collaboration Log**
+
+Topics:
+- What AI-assisted work means in this course: the collaboration log requirement introduced formally
+- Trust calibration: when to rely on the class agent, when to push back, how to document disagreements
+- Collaboration log format and grading criteria; walkthrough of a sample entry
+- Introduction to GitHub Copilot for code completion: accepting, rejecting, and annotating suggestions
+- The ML landscape before modeling: a taxonomy of problem types (supervised, unsupervised, reinforcement); where each project in this course sits
+- Lab: Students draft their first collaboration log entry based on the Week 1 notebook; peer review of environment setup choices
+
+Standalone vs. project arc: **Intro Unit Week 2** — establishes the norms and AI literacy the rest of the course depends on.
+
+---
+
+**Week 3 — Foundational Data Concepts: EDA and the Pre-Modeling Pipeline**
+
+Topics:
+- Review of DATA 271 material: loading data (CSV, JSON, SQL), data types, missing values, outlier identification
+- Exploratory data analysis before modeling — not just before visualization: distributional checks, class balance, correlation structure
+- The data science pipeline as an end-to-end loop: obtain → wrangle → model → evaluate → communicate
+- Feature engineering preview: encoding, scaling, and imputation — covered deeply in project work but introduced here
+- Lab: End-to-end EDA on a real dataset (California wildfire perimeter data or similar); students use the class agent to generate summary statistics and ask "what looks wrong?"
+
+Standalone vs. project arc: **Intro Unit Week 3** — completes the intro unit; provides the scaffold all three projects will reuse.
+
+---
+
+### UNIT 1 — Supervised Learning (Weeks 4–9)
+#### Project 1: Classification on a Real-World Tabular Dataset (Weeks 4–8)
 
 This is the longest project arc. Students choose from a curated set of approved datasets (environmental monitoring, public health records, Cal Poly Humboldt campus energy usage, USDA agricultural data). They will build, evaluate, and compare classifiers, culminating in a written report and a five-minute recorded walkthrough.
 
 ---
 
-**Week 3 — Classification Fundamentals: Logistic Regression and Decision Trees**
+**Week 4 — Classification Fundamentals: Logistic Regression and Decision Trees**
 
 Topics:
 - Binary classification: the decision boundary intuition
 - Logistic regression: coefficients, log-odds, probability outputs
 - Decision trees: splits, depth, overfitting
 - Confusion matrix, precision, recall, F1, ROC-AUC
+- Training / validation / test splits — why and how; data leakage as a career-ending mistake
 - Lab: Logistic regression vs. decision tree on a binary health outcome dataset
 
 *Project 1 launched this week. Students select dataset; instructor approves.*
 
 ---
 
-**Week 4 — Ensemble Methods: Random Forests and Gradient Boosting**
+**Week 5 — Ensemble Methods: Random Forests and Gradient Boosting**
 
 Topics:
 - Bagging and the variance-reduction intuition
@@ -97,7 +116,7 @@ Topics:
 
 ---
 
-**Week 5 — Model Evaluation and Cross-Validation**
+**Week 6 — Model Evaluation and Cross-Validation**
 
 Topics:
 - k-fold cross-validation: why the simple train/test split lies to you
@@ -108,7 +127,7 @@ Topics:
 
 ---
 
-**Week 6 — Regression: Continuous Target Variables**
+**Week 7 — Regression: Continuous Target Variables**
 
 Topics:
 - Linear regression review (expected from STAT 109) — extended to regularization
@@ -117,11 +136,11 @@ Topics:
 - Polynomial features and interaction terms
 - Lab: Regression on environmental continuous outcome (e.g., stream flow prediction, air quality index)
 
-*Note: Regression is a parallel track to classification — covered in week 6 to give students a second supervised flavor before the project wraps.*
+*Note: Regression is a parallel track to classification — covered in week 7 to give students a second supervised flavor before the project wraps.*
 
 ---
 
-**Week 7 — Project 1 Work Session and Peer Review**
+**Week 8 — Project 1 Work Session and Peer Review**
 
 Topics:
 - In-class project workshop: students work on their classification pipeline
@@ -129,11 +148,11 @@ Topics:
 - AI agent as reviewer: students prompt the agent to critique their feature engineering choices
 - Instructor feedback checkpoint
 
-*Project 1 deliverable due end of week 7.*
+*Project 1 deliverable due end of week 8.*
 
 ---
 
-**Week 8 — Support Vector Machines and the Kernel Trick**
+**Week 9 — Support Vector Machines and the Kernel Trick**
 
 Topics:
 - Maximal margin classifier intuition
@@ -146,14 +165,14 @@ Standalone vs. project arc: **Standalone topic** — SVM is core curriculum but 
 
 ---
 
-### UNIT 2 — Unsupervised Learning (Weeks 9–11)
-#### Project 2: Cluster Analysis and Dimensionality Reduction on Unstructured or High-Dimensional Data (Weeks 9–11)
+### UNIT 2 — Unsupervised Learning (Weeks 10–12)
+#### Project 2: Cluster Analysis and Dimensionality Reduction on Unstructured or High-Dimensional Data (Weeks 10–12)
 
 A three-week project. Students apply clustering and dimensionality reduction to a dataset without labels — they must argue their own interpretation of what the clusters mean. Approved datasets include: satellite imagery band data, genomic expression data, Humboldt County census tract socioeconomic data.
 
 ---
 
-**Week 9 — Clustering: k-Means and Hierarchical Methods**
+**Week 10 — Clustering: k-Means and Hierarchical Methods**
 
 Topics:
 - The unsupervised problem: no ground truth
@@ -166,7 +185,7 @@ Topics:
 
 ---
 
-**Week 10 — Dimensionality Reduction: PCA and t-SNE/UMAP**
+**Week 11 — Dimensionality Reduction: PCA and t-SNE/UMAP**
 
 Topics:
 - Principal Component Analysis: variance explained, biplots, scree plots
@@ -177,7 +196,7 @@ Topics:
 
 ---
 
-**Week 11 — Project 2 Work Session and Critique**
+**Week 12 — Project 2 Work Session and Critique**
 
 Topics:
 - In-class studio: building the cluster narrative
@@ -185,18 +204,18 @@ Topics:
 - Visualization as communication: matplotlib, seaborn, plotly
 - Peer critique and AI agent review
 
-*Project 2 deliverable due end of week 11.*
+*Project 2 deliverable due end of week 12.*
 
 ---
 
-### UNIT 3 — Modern ML Practices and Applied AI (Weeks 12–15)
-#### Project 3: End-to-End ML System with an AI-Augmented Workflow (Weeks 12–14)
+### UNIT 3 — Modern ML Practices and Applied AI (Weeks 13–15)
+#### Project 3: End-to-End ML System with an AI-Augmented Workflow (Weeks 13–15)
 
 The capstone project. Students build a complete, documented ML system: problem framing, data acquisition or use of a provided raw dataset, full pipeline, model selection with justified trade-offs, and a deployment-ready model card. The AI agent is an explicit collaborator — students submit a "collaboration log" documenting how they used AI tools, what it got right, and where they had to correct it.
 
 ---
 
-**Week 12 — Neural Networks and Deep Learning: Practical Foundations**
+**Week 13 — Neural Networks and Deep Learning: Practical Foundations**
 
 Topics:
 - From linear models to multilayer perceptrons: the architecture intuition
@@ -209,7 +228,7 @@ Topics:
 
 ---
 
-**Week 13 — Large Language Models as Tools in the Data Science Workflow**
+**Week 14 — Large Language Models as Tools in the Data Science Workflow**
 
 Topics:
 - What LLMs actually are: tokens, context windows, how prompting works mechanically
@@ -221,7 +240,7 @@ Topics:
 
 ---
 
-**Week 14 — ML Best Practices: Ethics, Fairness, and Model Cards**
+**Week 15 — ML Best Practices, Model Cards, and Final Presentations**
 
 Topics:
 - Data leakage revisited: real-world failure modes
@@ -230,26 +249,17 @@ Topics:
 - Model cards: what they are, why they exist, how to write one
 - Responsible AI and the "data for good" frame: Humboldt program identity
 - Lab: Students complete Model Card for Project 3 system
-
-*Project 3 deliverable due end of week 14.*
-
----
-
-**Week 15 — Final Presentations and Synthesis**
-
-Topics:
 - Student presentations of Project 3 (5 minutes per student or team)
-- Synthesis lecture: the ML landscape you now inhabit
+- Synthesis and reflection: AI as collaborator — what worked, what the agent got wrong, what you learned from correcting it
 - Career paths and next courses: what DATA 411 / 412 will ask of you
-- Reflection: AI as collaborator — what worked, what the agent got wrong, what you learned from correcting it
 
-Standalone vs. project arc: **Standalone capstone week** — no new technical content introduced.
+*Project 3 deliverable due end of week 15.*
 
 ---
 
 ## 4. Project Groupings
 
-### Project 1 — Classification Pipeline (Weeks 3–7)
+### Project 1 — Classification Pipeline (Weeks 4–8)
 **Scope:** 5 weeks. Students complete an end-to-end binary or multiclass classification project on a tabular dataset with real-world stakes.
 
 **Deliverable:** Jupyter notebook with documented pipeline + 5-minute recorded walkthrough (Loom or equivalent).
@@ -262,7 +272,7 @@ Standalone vs. project arc: **Standalone capstone week** — no new technical co
 
 ---
 
-### Project 2 — Cluster Analysis (Weeks 9–11)
+### Project 2 — Cluster Analysis (Weeks 10–12)
 **Scope:** 3 weeks. Students apply unsupervised methods to a high-dimensional or label-free dataset and construct a meaningful interpretation.
 
 **Deliverable:** Report (4–6 pages) + visualization portfolio (minimum 4 publication-quality figures).
@@ -275,7 +285,7 @@ Standalone vs. project arc: **Standalone capstone week** — no new technical co
 
 ---
 
-### Project 3 — End-to-End ML System with Model Card (Weeks 12–14)
+### Project 3 — End-to-End ML System with Model Card (Weeks 13–15)
 **Scope:** 3 weeks. The capstone. Students frame their own problem, build a complete pipeline, and produce a model card documenting the system.
 
 **Deliverable:** GitHub repo with clean, documented code + model card + collaboration log.
@@ -299,6 +309,9 @@ This section defines the skill set needed for the course AI agent (the "class ag
 
 | Topic | Skill Description |
 |---|---|
+| **Intro: Environment setup** | Walk a student through diagnosing a broken Python environment; resolve conda/venv, Jupyter kernel, and Git config issues |
+| **Intro: AI workflow** | Review a student's collaboration log entry; identify missing critical reflection; model what good AI-assisted work documentation looks like |
+| **Intro: EDA review** | Given a dataset, guide a student through a full pre-modeling EDA checklist; surface distributional issues, missing data patterns, and class imbalance |
 | Data splits & leakage | Given a scenario, identify whether data leakage is present and explain why |
 | Feature engineering | Walk a student through encoding, scaling, and imputation decisions on a provided dataset |
 | Logistic regression | Interpret coefficients and log-odds; debug a failing convergence |
@@ -379,19 +392,19 @@ The quiz prep agent should refuse to just give answers; it should ask the studen
 
 If a dean is evaluating this course and its AI pilot, these are the scenarios most likely to land:
 
-**1. The Leakage Gotcha (Week 2 / Week 5)**
+**1. The Leakage Gotcha (Week 3 / Week 6)**
 Show a notebook where a student preprocesses the entire dataset before splitting, accidentally achieves 99% accuracy, and then the AI agent identifies the leakage when the student says "this seems too good." Demo the agent asking "when did you fit your scaler?" The dean sees AI as a teaching tool, not a cheating tool.
 
-**2. The F1 vs. Accuracy Explainer (Week 3)**
+**2. The F1 vs. Accuracy Explainer (Week 4)**
 A model that predicts "no wildfire" for every observation achieves 95% accuracy on an imbalanced dataset. Walk the dean through the AI agent explaining precision and recall in that specific context. Concrete, non-trivial, and immediately intuitive.
 
-**3. Cluster Interpretation on Humboldt County Data (Week 10)**
+**3. Cluster Interpretation on Humboldt County Data (Week 11)**
 Show a PCA + k-means run on census tract socioeconomic variables for Humboldt County. Let the dean see students asking the agent "what does cluster 3 mean?" and the agent responding with domain-grounded questions rather than a made-up answer. This hits the "data for good" identity directly.
 
-**4. The Model Card for a Health Outcome Classifier (Week 14)**
+**4. The Model Card for a Health Outcome Classifier (Week 15)**
 Show a draft model card for a classifier predicting hospital readmission. Let the agent redline it — pointing out missing training data documentation, an overconfident accuracy claim, and no mention of demographic subgroup performance. This demonstrates AI as a quality gate, not just a helper.
 
-**5. The Collaboration Log (Week 14–15)**
+**5. The Collaboration Log (Week 15)**
 Show a student's collaboration log where they prompted the agent to help with feature selection, the agent recommended dropping a variable incorrectly, and the student caught and documented the error. This is the dean's strongest evidence that the pilot develops critical AI use, not passive dependence.
 
 ---
@@ -400,12 +413,12 @@ Show a student's collaboration log where they prompted the agent to help with fe
 
 | Item | Alignment |
 |---|---|
-| Official catalog description | Fully covered: supervised (Weeks 3–8), unsupervised (Weeks 9–11), best practices (Weeks 2, 5, 14) |
-| Prerequisites honored | DATA 271 content assumed for feature engineering; MATH 107 assumed for PCA intuition; STAT 109 assumed for regression review |
-| Program identity ("data for good") | Environmental and social datasets used in all three projects; fairness metrics covered in Week 14 |
-| 300-level rigor | No hand-holding on Python basics; all modeling done in code; projects require interpretation, not just execution |
-| AI pilot requirements | AI agent introduced Week 1; assessed in all three projects; collaboration log is a graded deliverable |
-| Spring 2027 scheduling | 15 instructional weeks assumed; final week is presentations only (no new content) |
+| Official catalog description | Fully covered: supervised (Weeks 4–9), unsupervised (Weeks 10–12), best practices (Weeks 3, 6, 15) |
+| Prerequisites honored | DATA 271 content reviewed in Week 3; MATH 107 assumed for PCA intuition; STAT 109 assumed for regression review |
+| Program identity ("data for good") | Environmental and social datasets used in all three projects; fairness metrics covered in Week 15 |
+| 300-level rigor | Intro unit handles environment and norms so modeling weeks can move fast; projects require interpretation, not just execution |
+| AI pilot requirements | AI agent introduced Week 1; collaboration log norms established Week 2; assessed in all three projects |
+| Spring 2027 scheduling | 15 instructional weeks; Weeks 1–3 intro unit; Weeks 4–15 project arcs (11 weeks across 3 projects) |
 
 ---
 
