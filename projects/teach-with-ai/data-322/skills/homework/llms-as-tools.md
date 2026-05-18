@@ -116,3 +116,21 @@ Ask: "Why does the class agent know about the Project 3 rubric but ChatGPT doesn
 ## Connection to Project 3
 
 Project 3's collaboration log must include Week 14 entries documenting LLM use for feature engineering or data wrangling. The standard for these entries is: what did you ask, what did it produce, did you verify the output, and did you catch anything wrong? A log that says "used ChatGPT to help with data cleaning, it worked great" does not meet the critical reflection standard.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **An LLM generates code that calls `df.fillna(strategy="mean")`. You run it and get a TypeError. Explain why this happens and what it reveals about how LLMs generate code.**
+
+2. **What is "hallucination" in the context of LLMs, and why is it particularly dangerous when using an LLM to help write data processing code?**
+
+3. **You ask an LLM to interpret your PCA loadings. It gives you a detailed, confident explanation of what PC1 represents. What should you be skeptical about, and how would you verify the interpretation?**
+
+4. **Explain in plain language what retrieval-augmented generation (RAG) does and why it matters for a course tool like the DATA 322 class agent — what can the agent answer that a general-purpose LLM like ChatGPT cannot?**
+
+5. **What makes a prompt specific enough for a data task? Rewrite this weak prompt to make it better: "Write me a function to clean my data."**
+
+6. **When is an LLM genuinely useful in a data science workflow, and when should you be skeptical of its output? Give one example of each.**

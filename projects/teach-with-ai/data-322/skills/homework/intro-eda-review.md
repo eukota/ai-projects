@@ -161,3 +161,19 @@ If they can't answer these with evidence from their notebook, they are not ready
 This EDA checklist is the entry requirement for Project 1. The project rubric includes a section for EDA quality — not just "did you run `.describe()`" but "did you catch anything, and did you make a decision based on what you found?"
 
 Students who skip this step typically produce models that fail silently — high accuracy on an imbalanced dataset, features that shouldn't be there, test performance that doesn't match CV performance. The debugging is much harder than doing the EDA upfront.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **Your dataset has a column called `outcome_date`. You're predicting whether a patient will be readmitted. Should you include this column as a feature? Why or why not?**
+
+2. **A column has 60% missing values. Walk me through your decision process: what would you consider before deciding whether to drop the column, impute it, or keep it as-is?**
+
+3. **Your target variable is 94% negative and 6% positive. Before you model, what does this tell you about which metrics will be misleading and which will be informative?**
+
+4. **Why should you split your data into train and test before doing imputation or scaling — not after? What goes wrong if you do those steps on the full dataset first?**
+
+5. **Your EDA shows two features with correlation 0.97. Should you drop one of them? What factors affect your decision, and does the answer change depending on whether you're using logistic regression vs. random forest?**

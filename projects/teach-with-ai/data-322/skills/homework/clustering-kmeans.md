@@ -146,3 +146,21 @@ Ask: "Does the dendrogram suggest a natural number of clusters? Does that agree 
 ## Connection to Project 2
 
 Project 2 requires k selection justified with both elbow/silhouette evidence and domain reasoning. A submission that picks k=4 because "the silhouette score was highest" without explaining what four clusters mean in the domain will not receive full credit on the cluster narrative component (25% of the grade).
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **Why does k-means require feature scaling before you run it, but a decision tree doesn't?** Explain the underlying reason, not just the rule.
+
+2. **You run k-means with k=3 and k=5 on the same dataset. The silhouette score is higher for k=5, but k=3 makes more sense to a domain expert. Which would you choose, and what's your reasoning?**
+
+3. **A classmate says "k-means always finds the best clusters." What's wrong with that claim, and what does the algorithm actually guarantee?**
+
+4. **What does the elbow in an elbow plot represent, and why does inertia always decrease as k increases? What does that mean for how you read the plot?**
+
+5. **You fit k-means and get three clusters. You describe the results by listing the centroid values. Why isn't that a complete interpretation, and what else do you need to say?**
+
+6. **When would hierarchical clustering be a better choice than k-means? What does the dendrogram tell you that an elbow plot doesn't?**

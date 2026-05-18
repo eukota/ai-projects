@@ -107,3 +107,19 @@ Logistic regression is the first of the three required classifiers in Project 1.
 2. Acknowledging what the model cannot tell you — coefficients describe association in the training data, not causation.
 
 Do not accept "the model has a coefficient of 0.8 for feature X" as a complete interpretation. Ask: "What does that mean for someone using this model to make a real decision?"
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **Your logistic regression has a coefficient of 0.8 for the feature `vegetation_density`. Explain what that means in plain language to someone who doesn't know what log-odds are.**
+
+2. **You get a ConvergenceWarning from sklearn. What are the two most likely causes, and which should you address first? Why shouldn't you just increase `max_iter` as the first fix?**
+
+3. **`predict()` and `predict_proba()` return different things. Explain the difference and give an example of a situation where you'd need one vs. the other.**
+
+4. **Your model achieves 94% accuracy on an imbalanced dataset where 93% of samples are class 0. Is 94% accuracy meaningful here? What's actually happening and what metric should you look at instead?**
+
+5. **A coefficient of 0.12 on `age` (in years) and 0.12 on `income` (in dollars) look the same. Why are they completely different in terms of what they mean about feature importance?**

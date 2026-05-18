@@ -105,3 +105,19 @@ Same warning as decision trees, amplified because random forest importances look
 ## Connection to Project 1
 
 Random forest is the third required classifier. It will typically be the top performer. The student must explain in their narrative why that is — not just report the number. "Random forest outperformed logistic regression, likely because the relationship between features and the target is nonlinear and the ensemble reduces the overfitting seen in our single decision tree" is the kind of reasoning the project narrative requires.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **Explain bagging in your own words. What type of error does it reduce, and why does averaging many overfit trees produce a model that generalizes better than any single tree?**
+
+2. **What's the fundamental difference between how bagging and boosting combine their base learners? Which one is reducing bias and which is reducing variance?**
+
+3. **Your random forest's top feature has MDI importance 0.41. A classmate says this feature is twice as important as the next one at 0.20. What are two reasons you shouldn't trust that comparison at face value?**
+
+4. **In gradient boosting, what does "focusing on the samples the previous trees got wrong" actually mean mechanically? What is being adjusted and how?**
+
+5. **If you increase `learning_rate` in gradient boosting, what happens to the number of trees you need and why? What's the risk of a very high learning rate?**

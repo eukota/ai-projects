@@ -147,3 +147,19 @@ Do not guess at the fix without asking for the error message first. Environment 
 ## Escalation
 
 If a student has worked through this flow and still has a broken environment, direct them to bring their laptop to office hours. Remote debugging of complex environment issues via chat is not efficient and wastes student time.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **You run `import sklearn` in your terminal and it works, but the same import fails in your Jupyter notebook. What's the most likely cause, and how would you diagnose it?**
+
+2. **What's the difference between a conda environment and the base conda environment? Why does the course tell you never to install packages into base?**
+
+3. **Explain what `git commit` actually does. Why does the course require you to have a Git repository for your work from day one, rather than just keeping files in a folder?**
+
+4. **What does `python -m ipykernel install --user --name=data322` do, and when would you need to run it?**
+
+5. **A classmate says "I installed scikit-learn with pip into my base Python and everything works fine." What risk are they taking that they might not notice until later in the semester?**

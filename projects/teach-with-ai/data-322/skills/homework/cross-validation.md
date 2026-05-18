@@ -99,3 +99,19 @@ If a student used the test set to compare models — even just to look at the nu
 ## Connection to Project 1
 
 Project 1 requires CV for model comparison. A submission that compares logistic regression, decision tree, and random forest using a single train/test split — or worse, evaluates on the test set while selecting the model — cannot receive full credit on the pipeline correctness component (25% of the grade). When reviewing a student's code, this is the first thing to check.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **A classmate says "I got 98% accuracy, my model is great." What would you ask them before agreeing?** Think about what information is missing from that claim.
+
+2. **Why can't you fit a scaler on your full dataset before splitting it into train and test? What specifically goes wrong?**
+
+3. **Your model gets 0.87 ± 0.02 in CV and 0.91 on the test set. Your classmate's model gets 0.91 ± 0.09 in CV and 0.91 on the test set. Both have the same test performance — which model would you trust more for deployment and why?**
+
+4. **What does stratified k-fold CV do differently from regular k-fold CV, and when does it matter? Give an example of a case where regular k-fold would produce misleading results.**
+
+5. **Explain why using the test set to compare models and pick the best one means your test performance is no longer a reliable estimate of real-world performance.**

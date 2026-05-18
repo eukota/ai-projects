@@ -94,3 +94,19 @@ Also ask: "Are any of your top features correlated with each other?" Correlated 
 ## Connection to Project 1
 
 Decision trees are required as one of the three classifiers in Project 1. More importantly, the overfitting/depth relationship is the conceptual foundation for understanding why random forests work — covered next week. When reviewing a student's Project 1 tree, ask them to show the depth learning curve. A tree at `max_depth=None` in a project submission is a red flag.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **A decision tree with `max_depth=None` gets 100% accuracy on the training set. Explain in plain language why that happens and why it's a problem.**
+
+2. **Your learning curve shows training accuracy stays near 1.0 while validation accuracy peaks at depth 5 then drops. What does this tell you about what the tree is doing after depth 5?**
+
+3. **A classmate says "the top feature in my decision tree has an importance of 0.42, which proves it causes wildfire risk." What's wrong with that conclusion, and what does feature importance actually tell you?**
+
+4. **What is the difference between `min_samples_split` and `min_samples_leaf`? If you increase either of them, what effect does that have on the tree's complexity?**
+
+5. **Why does Gini impurity vs. entropy rarely matter for real model performance? When might you actually care about which one you use?**

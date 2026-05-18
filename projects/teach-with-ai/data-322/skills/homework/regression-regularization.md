@@ -114,3 +114,19 @@ Both `RidgeCV` and `LassoCV` handle alpha selection via cross-validation interna
 Regularized coefficients are not OLS coefficients. The penalty has deliberately biased them toward zero. You cannot interpret a regularized coefficient as "the true effect of this feature." You can say "this feature has a positive association with the target in this model at this regularization level" — but the magnitude is not the same thing it would be without regularization.
 
 Ask: "If you increased alpha by 10x, what would happen to your coefficients? Does that change which features look important?"
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **What problem is Ridge regression solving that ordinary linear regression doesn't handle? Describe the practical situation where Ridge helps — don't just define the penalty.**
+
+2. **Lasso zeroed out 8 of your 15 features. A classmate says "those 8 features are unimportant." What's the more careful interpretation, and when would that conclusion be wrong?**
+
+3. **You have two features that are highly correlated (r = 0.95). How does Ridge handle them differently from Lasso? What are the implications for feature interpretation?**
+
+4. **Why must you scale your features before fitting a regularized regression model? What goes wrong if you don't, in terms of how the penalty is applied?**
+
+5. **You increase the regularization parameter alpha by 100x. In plain language, what happens to your model's bias and variance, and what happens to the coefficient values?**

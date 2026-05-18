@@ -82,3 +82,19 @@ General heuristics (student should arrive at these through the conversation, not
 - Both require scaling; random forests do not.
 
 The right answer is always "it depends on the problem." A student who says "random forest is always better" hasn't engaged with the question.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **Explain the SVM margin in plain language. Why is a wider margin better than a boundary that just barely separates the training classes?**
+
+2. **What are support vectors, and why is it significant that only the support vectors determine the decision boundary? What happens to the SVM if you add 500 new training points that are far from the boundary?**
+
+3. **A high value of C makes the SVM tolerate fewer training errors. In plain language, what trade-off is that making, and what risk does it create?**
+
+4. **Explain the kernel trick conceptually — what problem does it solve, and why is it computationally feasible even when the explicit transformation to higher dimensions would not be?**
+
+5. **For a dataset with 50,000 rows, a classmate chooses SVM with an RBF kernel. What practical concern should they have that wouldn't apply to random forest? What would you recommend instead?**

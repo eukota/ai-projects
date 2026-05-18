@@ -151,3 +151,21 @@ Common deficiencies to flag:
 ## Connection to Project 3
 
 The model card is worth 20% of the Project 3 grade. The fairness analysis (at minimum one metric disaggregated by group) feeds directly into the Metrics and Ethical Considerations sections. A model card that has no subgroup analysis when the application involves people, or that lists no concrete ethical considerations, cannot receive full credit. This is the last deliverable of the course — it represents everything the semester has built toward.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **A model card says "accuracy: 0.87" in the Metrics section. What's missing, and what would a stakeholder need to know to evaluate whether 0.87 is actually good performance for this use case?**
+
+2. **Your intended use section says "this model predicts wildfire risk." A classmate points out that an insurance company could use it to deny coverage to homeowners. Does your intended use section prevent that misuse? What would need to change?**
+
+3. **Why can't you satisfy demographic parity, equalized odds, and calibration simultaneously when base rates differ between groups? What does this mean for a practitioner choosing a fairness metric?**
+
+4. **A model was trained on data from 2018–2022 and is being deployed in 2027. What specific risk does that create, and where in the model card should it be documented?**
+
+5. **Your ethical considerations section says "the model could be misused by bad actors." Why is that insufficient, and what would a concrete ethical consideration look like instead?**
+
+6. **Explain the difference between demographic parity and equalized odds in plain language. Give an example of a situation where you would choose one over the other and explain your reasoning.**

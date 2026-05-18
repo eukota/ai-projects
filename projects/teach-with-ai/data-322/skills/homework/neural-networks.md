@@ -151,3 +151,21 @@ Ask: "If your random forest and MLP produce similar performance on your Project 
 ## Connection to Project 3
 
 Project 3 requires comparing at least two model families. Neural networks are an option but not required — the project is about justifying the choice, not hitting a specific algorithm. If a student uses an MLP, they must explain why it was a reasonable candidate given the dataset size and problem type. A comparison that reports only final test metrics without discussing trade-offs will not receive full credit.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **Why do neural networks need nonlinear activation functions between layers? What happens if you stack multiple linear layers without them?**
+
+2. **Your training loss decreases smoothly but your validation loss starts increasing after epoch 15. Explain what's happening and what you would try to fix it.**
+
+3. **A classmate trains an MLP on a 500-row tabular dataset and gets better training accuracy than a random forest. Should they use the MLP? What question should they be asking instead of just looking at training accuracy?**
+
+4. **What does the learning rate control, and what's the symptom of a learning rate that's too high vs. one that's too low?**
+
+5. **For a tabular dataset with 2,000 rows and 20 features, make the case for using gradient boosting instead of a neural network. What are the practical reasons, not just the rule of thumb?**
+
+6. **Explain backpropagation in plain language without using the phrase "gradient descent." What information flows backward through the network and what happens to the model's weights as a result?**

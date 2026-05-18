@@ -93,3 +93,19 @@ Tools outside this list are not prohibited, but students must document their use
 ## Grading Weight Reminder
 
 The collaboration log is worth 15% of each project grade. A log that has no critical reflection or no documented errors cannot receive full credit regardless of how good the underlying project work is. This is intentional — the log is not an afterthought; it is evidence of how you learned.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **A collaboration log entry says "I used the class agent to help with my feature engineering and it was helpful." What's missing from this entry? What would a complete entry include?**
+
+2. **Why does the course require that every log entry include at least one moment where you disagreed with or corrected the AI? What would it mean about your work if every entry said the AI was always right?**
+
+3. **You accept a code suggestion from GitHub Copilot without reading it, it works, and you submit. Should this go in your collaboration log? Why or why not?**
+
+4. **Explain the difference between using an AI tool and learning from an AI tool. How does the collaboration log try to capture that distinction?**
+
+5. **A classmate says "AI use is allowed, so I had the AI write my whole analysis section and I just read it over." Is this acceptable under the course's collaboration norms? Explain your reasoning.**

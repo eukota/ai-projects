@@ -32,7 +32,47 @@ This course extends the official catalog scope deliberately. The catalog descrip
 
 ---
 
-## 3. Week-by-Week Topic Outline
+## 3. Assessment Model
+
+### Graded Components
+
+Students are evaluated on four components throughout the semester:
+
+**1. Infrastructure Setup**
+Verified during Week 1. Students must demonstrate a working Python environment (conda or venv), Jupyter running against the correct kernel, Git configured with identity, and VS Code or Cursor with the Python extension. This is a pass/fail gate — it is graded on completeness, not conceptual depth. The class agent diagnoses and helps resolve failures; see `skills/homework/infra-setup-rubric.md`.
+
+**2. Project Narrative**
+Each of the three projects includes a written or recorded narrative component: explaining the problem, the modeling choices, and what the results mean for a real-world audience. Graded on clarity of reasoning, appropriate interpretation of results, and honest acknowledgment of model limitations. AI assistance is allowed and expected; students must document it in the collaboration log.
+
+**3. Project Results**
+The technical deliverable: Jupyter notebook, pipeline code, model card, visualization portfolio, or GitHub repo depending on the project. Graded on ML correctness (no leakage, proper CV, appropriate preprocessing), completeness relative to the rubric, and the quality of the collaboration log documenting AI use.
+
+**4. In-Class Conceptual Tests**
+Short-answer written tests administered during class. Tests are taken by hand (or via an AI interface once the necessary server infrastructure is built — this is a planned future feature). Each test covers the conceptual content of recent weeks: students are asked to explain ideas in plain language, reason through a scenario, or identify what's wrong with a flawed approach. Tests are not skill tests — there is no code to write.
+
+---
+
+### In-Class Test Format
+
+Tests are short (20–30 minutes), closed-resource, and consist of 4–6 questions drawn from the `## Quiz Prep` sections of the relevant homework skill files. Questions require 2–4 sentence written answers. Correct answers demonstrate understanding — a student who can explain *why* cross-validation prevents leakage will pass; a student who memorized "use k-fold CV" will not.
+
+AI-assisted preparation is fully encouraged. The class agent runs Socratic drill sessions from the quiz prep question banks. Students who use the agent to prep will have seen the question style and the level of reasoning required.
+
+**Planned: AI-delivered tests.** The long-term design is for in-class tests to be delivered through a supervised AI interface — the agent presents questions, the student types answers, and the instructor reviews the session log. This requires server interface software not yet in place. Until that infrastructure is available, tests are administered on paper or via a standard LMS quiz.
+
+---
+
+### Assessment Philosophy
+
+AI use is fully allowed throughout this course, including for homework, project work, and test preparation. The course is designed around the assumption that students will use AI tools — the collaboration log requirement exists to make that use visible and critical rather than passive.
+
+Accountability comes from demonstrated understanding in class. A student who uses AI to complete all their project work but cannot explain what cross-validation is, or why their model's precision matters more than accuracy for an imbalanced dataset, has not learned the material. The in-class tests are the accountability mechanism. They cannot be completed by AI on the student's behalf — they require the student to show up and reason through the concepts themselves.
+
+The design intent: AI assistance accelerates learning and reduces friction. The tests verify that learning actually happened.
+
+---
+
+## 4. Week-by-Week Topic Outline
 
 Each week is 3 hours of lecture/lab contact. Four-unit course.
 
@@ -257,7 +297,7 @@ Topics:
 
 ---
 
-## 4. Project Groupings
+## 5. Project Groupings
 
 ### Project 1 — Classification Pipeline (Weeks 4–8)
 **Scope:** 5 weeks. Students complete an end-to-end binary or multiclass classification project on a tabular dataset with real-world stakes.
@@ -299,13 +339,13 @@ Topics:
 
 ---
 
-## 5. Skills Manifest for AI Agent Design
+## 6. Skills Manifest for AI Agent Design
 
 This section defines the skill set needed for the course AI agent (the "class agent") and per-topic homework and quiz prep agents.
 
 ---
 
-### 5.1 Homework Skills (by topic area)
+### 6.1 Homework Skills (by topic area)
 
 | Topic | Skill Description |
 |---|---|
@@ -329,7 +369,7 @@ This section defines the skill set needed for the course AI agent (the "class ag
 
 ---
 
-### 5.2 Project Skills (by project arc)
+### 6.2 Project Skills (by project arc)
 
 **Project 1 (Classification):**
 - Dataset sanity check: "Here is my EDA — what am I missing before I model?"
@@ -350,7 +390,7 @@ This section defines the skill set needed for the course AI agent (the "class ag
 
 ---
 
-### 5.3 Quiz Prep Skills
+### 6.3 Quiz Prep Skills
 
 The quiz prep agent should be able to run Socratic-style drills on:
 
@@ -368,7 +408,7 @@ The quiz prep agent should refuse to just give answers; it should ask the studen
 
 ---
 
-### 5.4 Class Agent Description
+### 6.4 Class Agent Description
 
 **Name (suggested):** DATA-322 Assistant (or localized name chosen by the instructor)
 
@@ -388,7 +428,7 @@ The quiz prep agent should refuse to just give answers; it should ask the studen
 
 ---
 
-## 6. Compelling Examples for a Dean's Test Drive
+## 7. Compelling Examples for a Dean's Test Drive
 
 If a dean is evaluating this course and its AI pilot, these are the scenarios most likely to land:
 
@@ -409,7 +449,7 @@ Show a student's collaboration log where they prompted the agent to help with fe
 
 ---
 
-## 7. Alignment Notes
+## 8. Alignment Notes
 
 | Item | Alignment |
 |---|---|

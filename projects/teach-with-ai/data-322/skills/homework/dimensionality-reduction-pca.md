@@ -126,3 +126,21 @@ For Project 2, if a student uses t-SNE for visualization, require them to note i
 ## Connection to Project 2
 
 PCA is required in Project 2 — both as a preprocessing option and as the source of the 2D cluster visualization. The scree plot is one of the four required figures. Component interpretation in domain terms contributes to the cluster narrative grade. A PCA section that only shows cumulative variance explained without interpreting what PC1 and PC2 represent will not receive full credit.
+
+---
+
+## Quiz Prep
+
+The AI will quiz you on these questions in Socratic mode before the in-class test — it will ask you to answer first, then give feedback. Memorizing definitions won't be enough; you need to be able to reason through these in plain language.
+
+1. **Your first two principal components explain 38% of the variance. You make a 2D scatter plot of your clusters using PC1 and PC2. What's the risk of drawing conclusions from that plot?**
+
+2. **Explain what a PCA loading is. If PC1 has a high loading on income, education level, and home value, what does that mean in plain language? What would you call that component?**
+
+3. **Why does PCA require feature scaling beforehand, and what goes wrong if you skip it?**
+
+4. **A classmate says "t-SNE shows my clusters are really well separated, so the clustering is good." What are two reasons you can't trust that conclusion?**
+
+5. **What's the difference between using PCA as preprocessing before clustering vs. using PCA to produce a final visualization? Why does that distinction matter for how you interpret the results?**
+
+6. **If PC1 and PC2 explain 62% of variance and you use them to run k-means instead of the original features, what have you gained and what have you potentially lost?**
