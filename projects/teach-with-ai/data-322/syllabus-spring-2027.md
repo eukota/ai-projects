@@ -168,7 +168,7 @@ What AI will not do for you in this course: write your complete project delivera
 
 ## Program Alignment
 
-This course directly supports Cal Poly Humboldt's "data for good" program mission. Project datasets are drawn from environmental, public health, and social equity domains. Project 3 requires a fairness analysis — applying the program's values to the models students build.
+This course directly supports Cal Poly Humboldt's "data for good" program mission. Project datasets will be selected from environmental, public health, and social equity domains *(TBD)*. Project 3 requires a fairness analysis — applying the program's values to the models students build.
 
 ---
 
