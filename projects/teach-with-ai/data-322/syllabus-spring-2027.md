@@ -72,7 +72,7 @@ Neural networks, LLMs as tools, fairness, and model cards. Project 3 runs Weeks 
 
 | Week | Topic | Notes |
 |---|---|---|
-| 1 | Environment setup; intro to the course AI agent | **Infra gate — pass/fail** |
+| 1 | Environment setup with AI assistance; intro to the course AI agent | Students set up Python, Jupyter, Git, and editor in class with AI support for troubleshooting |
 | 2 | AI collaboration norms; the collaboration log; ML landscape taxonomy | |
 | 3 | EDA and the pre-modeling pipeline (DATA 271 review) | |
 | 4 | Classification: logistic regression and decision trees | **Project 1 begins** |
@@ -93,7 +93,7 @@ Neural networks, LLMs as tools, fairness, and model cards. Project 3 runs Weeks 
 ## Projects
 
 ### Project 1 — Classification Pipeline (Weeks 4–8)
-Build, evaluate, and compare classifiers on a real-world tabular dataset. Datasets are drawn from environmental monitoring, public health, and Cal Poly Humboldt campus data.
+Build, evaluate, and compare classifiers on a real-world tabular dataset. *(Dataset TBD)*
 
 **Deliverables:** Documented Jupyter notebook + 5-minute recorded walkthrough + collaboration log  
 **Requirements:** Minimum three classifiers; proper cross-validation harness; results interpreted for a non-technical audience; no data leakage
@@ -101,11 +101,10 @@ Build, evaluate, and compare classifiers on a real-world tabular dataset. Datase
 ---
 
 ### Project 2 — Cluster Analysis (Weeks 10–12)
-Apply clustering and dimensionality reduction to an unlabeled dataset. Students must argue what the clusters mean without ground truth labels.
+Apply clustering and dimensionality reduction to an unlabeled dataset. Students must argue what the clusters mean without ground truth labels. *(Dataset TBD)*
 
 **Deliverables:** Written report (4–6 pages) + visualization portfolio (4+ publication-quality figures) + collaboration log  
-**Requirements:** k-means plus one hierarchical or density-based method; PCA component interpretation; silhouette analysis; domain-grounded cluster narrative  
-**Candidate dataset:** Humboldt County census tract socioeconomic data
+**Requirements:** k-means plus one hierarchical or density-based method; PCA component interpretation; silhouette analysis; domain-grounded cluster narrative
 
 ---
 
@@ -121,7 +120,7 @@ Student-framed problem. Full pipeline from raw data to a stakeholder-readable mo
 
 | Component | Weight | Notes |
 |---|---|---|
-| Infrastructure Setup | 5% | Pass/fail gate, Week 1 |
+| Infrastructure Setup | 5% | Verified by end of Week 1; students must have working Python, Jupyter, Git, and editor. The course AI and instructor support troubleshooting as needed. |
 | Project 1 — Narrative | 10% | Written/recorded explanation |
 | Project 1 — Results | 15% | Technical notebook + collaboration log |
 | Project 2 — Narrative | 10% | Report and visualization portfolio |
@@ -144,12 +143,16 @@ Students who can explain *why* cross-validation prevents leakage will pass. Stud
 
 ## The Collaboration Log
 
-Every project submission includes a collaboration log — a documented record of how the student used AI tools, what the agent got right, and where the student had to correct, override, or push back on AI output.
+Every project submission includes a collaboration log — a documented record of how you used AI tools, what the agent got right, and where you had to correct, override, or push back on AI output.
 
-The collaboration log is graded on quality of critical reflection, not on whether the student used AI extensively. A log that shows a student caught and documented an AI error is stronger than one that shows passive acceptance of AI suggestions.
+The collaboration log is graded on **evidence of critical engagement**, not on extent of AI use. A log that shows you caught and documented an AI error is stronger than one that shows passive acceptance of correct suggestions.
 
-Sample log entry format:
-> *Week 5, cross-validation harness. I asked the agent to write a CV loop. It produced a loop that fit the scaler on the full dataset before splitting — data leakage. I caught this, corrected the code, and documented that the agent's suggestion was incorrect.*
+**What to submit:**
+- Chat log or transcript (full conversation or key excerpts)
+- Annotations marking moments of critical engagement (errors caught, follow-ups asked, pushback)
+- Brief summary (2–3 sentences) on what you learned from using AI on this project
+
+See `skills/homework/collaboration-log-rubric.md` for detailed scoring criteria.
 
 ---
 
