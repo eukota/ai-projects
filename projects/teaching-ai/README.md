@@ -53,8 +53,7 @@ For engineers mastering Phase C. Emerging systems: tools, observability, graphs,
 
 ## Related Materials
 
-- [Curriculum Map](MATERIAL_MAP.md) — Overview of all phases and their content
-- [Material Map](MATERIAL_MAP.md) — Detailed breakdown of existing vs. needed materials
+- [Material Map](MATERIAL_MAP.md) — Overview of all phases, levels, content status, and next steps
 
 ## Relationship to Teach With AI
 
