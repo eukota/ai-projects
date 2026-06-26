@@ -8,13 +8,23 @@
 
 ## Structure
 
-Phase D contains two complementary tracks:
+Phase D contains four major tracks:
 
-### [Interview Preparation](interview-prep/)
+### Interview Track
+
+**[Interview Preparation](interview-prep/)**
 Teaching course for performing well in AI-assisted technical interviews. Learn interview strategy, how to communicate your thinking, and how to demonstrate AI proficiency across question-solving phases.
 
-### [AI Solution Strategy](ai-solution-strategy/)
+**[AI Solution Strategy](ai-solution-strategy/)**
 Evaluation rubric and experience guidance for AI-assisted interviews. Understand what interviewers assess (AI Awareness, Code Proficiency, AI Proficiency, Requirements, Design & Implementation, Testing) and how to practice at Entry/Mid/Senior levels.
+
+### Architecture & Systems Track
+
+**[AI Stack](ai-stack/)**
+Understanding and building complete agentic toolchains. From context management through agent loops to observability and logging—explore each component of a functional AI system and how they fit together.
+
+**[Event Horizon](event-horizon/)**
+Exploring self-learning agents and agentic evolution. Philosophical and technical questions about agents that improve themselves, adapt autonomously, and move beyond their initial programming.
 
 ---
 
