@@ -35,13 +35,26 @@ The mission is to create more AI-unlocked individuals: people who can use AI as 
 - Demos
 - Sample agents
 
-## Key Documents
+## Curriculum Structure
 
-- [Vision](vision.md)
-- [AI-Unlocked Individuals](ai-unlocked.md)
-- [Teaching Tracks](tracks.md)
-- [Sample Agents](sample-agents.md)
-- [Risks and Responses](risks.md)
+Teaching AI is organized into four phases, each with its own progression levels:
+
+### [Phase A: Foundation](phases/a/) (Level 0)
+For anyone hesitant or skeptical about AI. Addresses fears, establishes why AI matters.
+
+### [Phase B: General Capability](phases/b/) (Levels 1-3)
+For anyone ready to learn AI. Progressive learning in practical AI capability.
+
+### [Phase C: Engineering Fundamentals](phases/c/) (Levels 4-11)
+For engineers already committed to AI. Based on Yegge's 8 stages of AI developer evolution.
+
+### [Phase D: Frontier](phases/d/) (Levels 12+)
+For engineers mastering Phase C. Emerging systems: tools, observability, graphs, context, guardrails, marketplaces.
+
+## Related Materials
+
+- [Curriculum Map](MATERIAL_MAP.md) — Overview of all phases and their content
+- [Material Map](MATERIAL_MAP.md) — Detailed breakdown of existing vs. needed materials
 
 ## Relationship to Teach With AI
 
