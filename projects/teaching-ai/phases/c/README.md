@@ -4,39 +4,21 @@
 
 **Who this is for**: Engineers committed to AI development. Self-motivated learners ready to progress from IDE-based coding to advanced orchestration.
 
-## Levels 4-11: Yegge's 8 Stages of AI Developer Evolution
+## Levels 1-8: Yegge's 8 Stages of AI Developer Evolution
 
-**Level 4 (Stage 1)**: Zero or Near-Zero AI
-- Maybe code completions, sometimes ask Chat questions
+| Level | Stage | Friendly Name | Overview |
+|-------|-------|---|---|
+| [Level 1](level-1/) | Stage 1 | **Foundations** | Zero or Near-Zero AI — maybe code completions, sometimes ask Chat questions |
+| [Level 2](level-2/) | Stage 2 | **Emerging** | IDE Agent, Permissions On — narrow coding agent in sidebar asks permission to run tools |
+| [Level 3](level-3/) | Stage 3 | **YOLO** | IDE Agent, YOLO Mode — trust goes up, turn off permissions, agent gets wider |
+| [Level 4](level-4/) | Stage 4 | **Expanding** | IDE, Wide Agent — agent gradually grows to fill the screen; code is diffs |
+| [Level 5](level-5/) | Stage 5 | **Accelerating** | CLI, Single Agent — move to command line, single agent instance, high velocity |
+| [Level 6](level-6/) | Stage 6 | **Swarming** | CLI, Multi-Agent YOLO — regularly use 3-5 parallel agent instances |
+| [Level 7](level-7/) | Stage 7 | **Orchestrating** | 10+ Agents, Hand-Managed — starting to push limits of manual hand-management |
+| [Level 8](level-8/) | Stage 8 | **Autonomous** | Building Your Own Orchestrator — automating agent workflow, on the frontier |
 
-**Level 5 (Stage 2)**: IDE Agent, Permissions On
-- Narrow coding agent in sidebar asks permission to run tools
+## Reference
 
-**Level 6 (Stage 3)**: IDE Agent, YOLO Mode
-- Trust goes up, turn off permissions, agent gets wider
+All levels are based on Steve Yegge's **["Welcome to Gas Town"](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04)** — a detailed exploration of 8 stages of developer evolution with AI agents, plus a practical orchestration system design (Beads, MEOW stack, GUPP principle, Gas Town architecture).
 
-**Level 7 (Stage 4)**: IDE, Wide Agent
-- Agent gradually grows to fill the screen; code is diffs
-
-**Level 8 (Stage 5)**: CLI, Single Agent
-- Move to command line, single agent instance
-
-**Level 9 (Stage 6)**: CLI, Multi-Agent YOLO
-- Regularly use 3-5 parallel agent instances
-
-**Level 10 (Stage 7)**: 10+ Agents, Hand-Managed
-- Starting to push limits of manual coordination
-
-**Level 11 (Stage 8)**: Building Your Own Orchestrator
-- Automating agent workflow, on the frontier
-
-## Key Reference
-
-- **[Steve Yegge's "Welcome to Gas Town"](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04)** — The 8 stages framework + practical orchestration example (Beads, MEOW stack, Gas Town architecture)
-
-## Coming Soon
-
-- Deep documentation for each level
-- Practical stepping stones and projects
-- Tool ecosystem guidance for each stage
-- Interview preparation materials
+The progression maps directly to Yegge's framework, with each level exploring what it means to work with AI at that stage of maturity.
