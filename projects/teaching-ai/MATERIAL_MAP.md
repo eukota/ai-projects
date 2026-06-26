@@ -95,20 +95,37 @@ Engineers who already want to learn AI. Can follow A→B→C or skip A+B and sta
 
 Goal: Understand and navigate the frontier of AI engineering—systems, tools, architecture, and practices still forming.
 
-### Frontier Topics (Not yet fully documented):
-- **Tool Ecosystems** — How to navigate and integrate specialized AI tools at scale
-- **Observability** — Tracing, monitoring, debugging AI systems and agent behavior
-- **Graphs & Reasoning** — Knowledge graphs, reasoning structures, DAG-based task execution
-- **Context Management** — Memory systems, long-context strategies, state durability, context windows
-- **Guardrails** — Safety, compliance, constraint enforcement, reliability guarantees
-- **Marketplaces** — Composable agents, tool markets, workflow templates (e.g., Yegge's "Mol Mall")
-- **Emerging Concerns** — To be discovered as the field evolves
+### Interview Track
 
-### Current Sources:
-- **Gas Town architecture** (workflows, molecules, formulas, MEOW stack) — practical example of frontier thinking
+**[Interview Preparation](phases/d/interview-prep/)**
+- 7-module teaching course: interview strategy, requirements, design & implementation, testing, communication, mock interviews, self-assessment
+- Entry/Mid/Senior examples for each phase
+- Practical frameworks for demonstrating AI proficiency under interview constraints
+
+**[AI Solution Strategy](phases/d/ai-solution-strategy/)**
+- Evaluation rubric for AI-assisted technical interviews
+- Three top-level criteria: AI Awareness/Experience, Code Proficiency, AI Proficiency
+- Three solution phases: Requirements, Design & Implementation, Testing
+- Four performance levels (Non-Passing/Entry/Mid/Senior) with examples and training recommendations
+
+### Architecture & Systems Track
+
+**[AI Stack](phases/d/ai-stack/)**
+- End-to-end agentic toolchains from context management to observability
+- Core components: context management, agent orchestration, execution & iteration, observability & monitoring, safety & guardrails
+- Practical framework for understanding what a complete AI system requires
+- Evolving as patterns and best practices emerge
+
+**[Event Horizon](phases/d/event-horizon/)**
+- Self-learning agents and agentic evolution
+- Philosophical and technical questions: autonomy, adaptation, emergence, model selection
+- Exploration of agents that improve themselves and move beyond initial programming
+- Conversation-starting topics on the frontier of AI capability
 
 ### Entry Point:
-Engineers who have mastered Yegge's progression and want to understand where AI engineering is heading.
+Engineers who have mastered Yegge's progression (Phase C, Levels 4-11) and want to:
+- Perform well in AI-assisted interviews (Interview Track)
+- Understand complete agentic systems and emerging frontier (Architecture & Systems Track)
 
 ---
 
@@ -158,7 +175,7 @@ Focus: Yegge's progression (Levels 4-11) + interview-specific frontier depth
 | **A** | 0 | ✅ Complete | vision, risks | — |
 | **B** | 1-3 | ⚠️ Partial | ai-unlocked, sample-agents, tracks, ai-native-model | Explicit level progression |
 | **C** | 4-11 | 🔄 Framework Ready | Yegge's 8 stages (Gas Town reference) | Deep docs for each stage |
-| **D** | 12+ | ⏳ Emerging | Gas Town, frontier topics | Define 6-8 frontier areas |
+| **D** | 12+ | 🔄 Framework Ready | Interview track, AI Stack, Event Horizon | Build out content for each track |
 | **Presentations** | — | ✅ Good | CPH Colloquium, RCM Seminar | Optional: expand for engineer track |
 
 ---
@@ -166,6 +183,9 @@ Focus: Yegge's progression (Levels 4-11) + interview-specific frontier depth
 ## Next Steps
 
 1. **Build Phase C content** — Deep documentation for each of Yegge's 8 stages (what does each level mean, what skills are needed, what tools/workflows fit)
-2. **Define Phase D** — Structure the 6-8 frontier areas with guidance on each
-3. **Split engineer course** — Create two distinct curricula: "Get Really Good" vs. "Interview Ready"
-4. **Create stepping stones** — For each Yegge stage, define practical milestones/projects to move between levels
+2. **Build Phase D content** — Expand each of the four tracks with deeper material:
+   - Interview Prep: Add video walkthroughs, practice scenarios, real interview examples
+   - AI Solution Strategy: Add case studies, company-specific rubric variations
+   - AI Stack: Document each component with implementation patterns and tool comparisons
+   - Event Horizon: Curate research, document emerging patterns, explore philosophical questions
+3. **Create stepping stones** — For each Yegge stage (Phase C), define practical milestones/projects to move between levels
