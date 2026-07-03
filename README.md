@@ -40,5 +40,6 @@ External monetization requires permission. See [Commercial Use](COMMERCIAL_USE.m
 
 - `projects/aios/`
 - `projects/dot-star-engine/`
+- `projects/interviewing-with-ai/`
 - `projects/teaching-ai/`
 - `projects/teach-with-ai/`
