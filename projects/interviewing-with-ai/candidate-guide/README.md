@@ -21,6 +21,7 @@ These apply across all three phases:
 2. **Articulate your thinking out loud** — as you work through the problem, speak what you're gaining/learning
 3. **Work through the problem WITH the AI** — collaborate, not outsource. This is the core philosophy
 4. **Control the narrative** — Guide the interview toward a solvable problem through your questions and choices. Example: ask constraining questions that intentionally narrow scope, so the problem is completable in the time available
+5. **Ask AI to explain and compare to familiar concepts** — When you encounter something unclear, ask the AI to explain it. Request comparisons to patterns or concepts you already know to accelerate understanding and build mental models
 
 ### Reading AI Responses (tactical techniques)
 
