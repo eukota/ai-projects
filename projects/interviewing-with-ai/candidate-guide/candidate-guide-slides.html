@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview: Candidate Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1000px;
+            aspect-ratio: 4 / 5;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px 60px;
+            height: 100%;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-header {
+            font-size: 1.8em;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .slide h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+            line-height: 1.1;
+        }
+
+        .slide h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .slide h3 {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .slide p {
+            font-size: 1em;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .slide ul {
+            list-style: none;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .slide ul li {
+            color: #333;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .slide ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .prompt-example {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f5f5f5;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+            font-size: 0.95em;
+            line-height: 1.5;
+            font-family: 'Monaco', 'Courier New', monospace;
+            color: #333;
+        }
+
+        .prompt-poor {
+            border-left-color: #d32f2f;
+            background: #ffebee;
+        }
+
+        .prompt-good {
+            border-left-color: #388e3c;
+            background: #e8f5e9;
+        }
+
+        .prompt-label {
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .slide.title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide.title-slide h1 {
+            color: white;
+            font-size: 4em;
+        }
+
+        .slide.title-slide p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3em;
+        }
+
+        .slide.agenda-slide h2 {
+            margin-bottom: 30px;
+        }
+
+        .slide.agenda-slide ul li {
+            font-size: 1.15em;
+            margin-bottom: 16px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .agenda-principles {
+            background: #667eea;
+        }
+
+        .agenda-req-design {
+            background: #0288d1;
+        }
+
+        .agenda-implementation {
+            background: #388e3c;
+        }
+
+        .agenda-testing {
+            background: #f57c00;
+        }
+
+        .agenda-advanced {
+            background: #7b1fa2;
+        }
+
+        .section-principles {
+            background-color: #667eea;
+            color: white !important;
+        }
+
+        .section-req-design {
+            background-color: #0288d1;
+            color: white !important;
+        }
+
+        .section-implementation {
+            background-color: #388e3c;
+            color: white !important;
+        }
+
+        .section-testing {
+            background-color: #f57c00;
+            color: white !important;
+        }
+
+        .section-advanced {
+            background-color: #7b1fa2;
+            color: white !important;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 12px;
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .note p {
+            font-size: 0.9em;
+            font-style: italic;
+            color: #555;
+            margin: 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #f5f5f5;
+            border-top: 1px solid #ddd;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- 1: Title -->
+        <div class="slide title-slide active">
+            <h1>AI-Assisted Technical Interviews</h1>
+            <p>Solving Problems Well with AI</p>
+        </div>
+
+        <!-- 2: Agenda -->
+        <div class="slide agenda-slide">
+            <h2>Agenda</h2>
+            <ul>
+                <li class="agenda-principles">Core Principles</li>
+                <li class="agenda-req-design">Requirements & Design</li>
+                <li class="agenda-implementation">Implementation</li>
+                <li class="agenda-testing">Testing</li>
+                <li class="agenda-advanced">Advanced Techniques</li>
+            </ul>
+        </div>
+
+        <!-- 3: Core Principles -->
+        <div class="slide">
+            <h2>Core Principles</h2>
+            <ul>
+                <li><strong>You actively direct the AI</strong> — push back, reject, prioritize</li>
+                <li><strong>Articulate your thinking out loud</strong> — speak what you're gaining</li>
+                <li><strong>Work WITH the AI</strong> — collaborate, not outsource</li>
+                <li><strong>Control the narrative</strong> — ask constraining questions</li>
+                <li><strong>Ask AI to explain</strong> — compare to familiar concepts</li>
+            </ul>
+            <div class="note">
+                <p><em>"Industry is coalescing around evaluation axes: problem decomposition, control over the AI (directing vs. being directed), verification/testing habits, and keeping the interviewer in the loop."</em></p>
+            </div>
+        </div>
+
+        <!-- 4: Principle 1 - Active Direction -->
+        <div class="slide">
+            <div class="slide-header section-principles">Core Principle: Active Direction</div>
+            <h3>❌ Poor Prompt</h3>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Outsourcing:</div>
+                "Write me a URL shortener."
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it fails:</strong> One-shot. You've surrendered every decision to the AI.</p>
+
+            <h3>✅ Excellent Prompt</h3>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Directing:</div>
+                "We're designing a URL shortener. List the open requirements questions that most change the design — custom aliases, expiration, analytics, auth, scale. Group by architectural impact."
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it works:</strong> You use AI to surface options, then you make the calls. You're steering toward completable.</p>
+        </div>
+
+        <!-- 5: Principle 2 - Articulate Thinking -->
+        <div class="slide">
+            <div class="slide-header section-principles">Core Principle: Articulate Thinking</div>
+            <h3>❌ Poor Approach</h3>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Silent:</div>
+                Read AI response. Say nothing. Move on.
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it fails:</strong> Interviewer has no signal that you're thinking critically.</p>
+
+            <h3>✅ Excellent Approach</h3>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Speaking out loud:</div>
+                "I'm seeing three approaches here. I like the base62 counter because it gives collision-free codes with trivial logic. The tradeoff is guessability — acceptable for this."
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it works:</strong> Interviewer hears your reasoning in real-time. Shows mastery and confidence.</p>
+        </div>
+
+        <!-- 6: Principle 3 - Collaboration -->
+        <div class="slide">
+            <div class="slide-header section-principles">Core Principle: Work WITH the AI</div>
+            <h3>❌ Poor Approach</h3>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Black box:</div>
+                "Now write all the code." Accept output. Done.
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it fails:</strong> You get code you didn't shape and can't defend.</p>
+
+            <h3>✅ Excellent Approach</h3>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Collaborative:</div>
+                "Let's build in slices. Start with just shorten(url) and resolve(code). Use in-memory dict. No web layer yet — I want to eyeball the core logic first."
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it works:</strong> You decompose, delegate a slice, keep design yours. Actually review ~20 lines.</p>
+        </div>
+
+        <!-- 7: Principle 4 - Control Narrative -->
+        <div class="slide">
+            <div class="slide-header section-principles">Core Principle: Control the Narrative</div>
+            <h3>❌ Poor Approach</h3>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Vague bolt-on:</div>
+                "Add expiration too."
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it fails:</strong> Expiry means nothing—AI guesses.</p>
+
+            <h3>✅ Excellent Approach</h3>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Scoped and specific:</div>
+                "Add optional expiry: shorten(url, ttl_seconds=None). On resolve, treat expired as not-found. Lazy expiry is fine. Don't leak whether code ever existed."
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it works:</strong> You specify behavior, interface, and security nuance. You guide the work toward completable.</p>
+        </div>
+
+        <!-- 8: Principle 5 - Ask to Explain -->
+        <div class="slide">
+            <div class="slide-header section-principles">Core Principle: Ask AI to Explain</div>
+            <h3>❌ Poor Approach</h3>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Silent acceptance:</div>
+                AI generates code. You move forward without understanding.
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it fails:</strong> Gaps in understanding. You can't defend choices.</p>
+
+            <h3>✅ Excellent Approach</h3>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Ask & compare:</div>
+                "Explain the base62 counter increment. Compare it to how a relational DB auto-increment works."
+            </div>
+            <p style="margin-top: 15px;"><strong>Why it works:</strong> You build mental model by comparing to familiar. You own the solution.</p>
+        </div>
+
+        <!-- 9: Requirements & Design - The Approach -->
+        <div class="slide">
+            <div class="slide-header section-req-design">Requirements & Design</div>
+            <h2>The Approach</h2>
+            <p style="font-size: 1.05em; color: #666;"><strong>Timeline:</strong> 10-15 minutes total</p>
+            <ul>
+                <li>Type focused prompt directly into AI chat</li>
+                <li>Clear statement of design goal</li>
+                <li>Name the AI process/tool you want</li>
+                <li>List requirements and constraints</li>
+                <li>Ask interviewer clarifying questions in real-time</li>
+                <li>Read critically and call out what you don't want</li>
+                <li>Work with AI toward refined plan through iteration</li>
+            </ul>
+        </div>
+
+        <!-- 10: Requirements & Design - Interview Signaling -->
+        <div class="slide">
+            <div class="slide-header section-req-design">Requirements & Design</div>
+            <h2>Interview Signaling</h2>
+            <ul>
+                <li><strong>Opening move:</strong> "AI could spend 4 hours designing, but this is an interview, so I'm jumping in by giving requirements and getting a quick plan"</li>
+                <li><strong>As you read:</strong> Speak out loud about what you're gaining from the AI response</li>
+            </ul>
+        </div>
+
+        <!-- 11: Requirements & Design - Advanced Strategies -->
+        <div class="slide">
+            <div class="slide-header section-req-design">Requirements & Design</div>
+            <h2>Advanced Strategies</h2>
+            <ul>
+                <li><strong>Bring your own design process</strong> — but compress for interview time (risk: 30 min on 5-min work)</li>
+                <li><strong>Spawn background AI research</strong> — must circle back and incorporate results</li>
+                <li><strong>Devote more time to plan</strong> — only if you know your system implements quickly (risk vs. credibility boost)</li>
+            </ul>
+        </div>
+
+        <!-- 12: Implementation - The Approach -->
+        <div class="slide">
+            <div class="slide-header section-implementation">Implementation</div>
+            <h2>The Approach</h2>
+            <ul>
+                <li>Tell AI to execute the agreed plan</li>
+                <li><strong>Constrain for speed:</strong> MVP, time window, in-memory DB, skip QOL features</li>
+                <li>Get code into a file (not chat)</li>
+                <li>Review the code; find something to change</li>
+                <li>Show active direction—don't blindly accept</li>
+            </ul>
+        </div>
+
+        <!-- 13: Implementation - Interview Signaling -->
+        <div class="slide">
+            <div class="slide-header section-implementation">Implementation</div>
+            <h2>Interview Signaling</h2>
+            <ul>
+                <li><strong>Quick recap:</strong> Summarize requirements and plan</li>
+                <li><strong>Pivot to code:</strong> "Now let me actually get to the code and see what it looks like"</li>
+                <li><strong>Show engagement:</strong> Read, evaluate, spot improvements</li>
+                <li><strong>Signal:</strong> This demonstrates your coding knowledge and critical thinking</li>
+            </ul>
+        </div>
+
+        <!-- 14: Implementation - Advanced Strategies -->
+        <div class="slide">
+            <div class="slide-header section-implementation">Implementation</div>
+            <h2>Advanced Strategies</h2>
+            <ul>
+                <li><strong>Split work along component boundaries</strong> — spin up separate agents (e.g., API + UI) in parallel</li>
+                <li><strong>Tell AI to make its own decisions</strong> — give autonomy on components (risky but shows confidence)</li>
+            </ul>
+        </div>
+
+        <!-- 15: Testing - The Approach -->
+        <div class="slide">
+            <div class="slide-header section-testing">Testing</div>
+            <h2>The Approach</h2>
+            <ul>
+                <li>Ask AI to write tests for core functionality</li>
+                <li>Focus on happy path and main flows</li>
+                <li>Get tests into a runnable state (actual file)</li>
+                <li><strong>Review test inputs critically:</strong> spot gaps, ask AI to improve</li>
+                <li>Add edge cases based on your domain knowledge</li>
+                <li>Run tests and iterate</li>
+            </ul>
+        </div>
+
+        <!-- 16: Testing - Interview Signaling -->
+        <div class="slide">
+            <div class="slide-header section-testing">Testing</div>
+            <h2>Interview Signaling</h2>
+            <ul>
+                <li>Tell AI to write different types: unit, integration, regression</li>
+                <li>Signal: You understand test strategy, not just "write tests"</li>
+                <li>Show you're thinking about different aspects of validation</li>
+            </ul>
+        </div>
+
+        <!-- 17: Testing - Advanced Strategies -->
+        <div class="slide">
+            <div class="slide-header section-testing">Testing</div>
+            <h2>Advanced Strategies</h2>
+            <ul>
+                <li><strong>Focus on integration tests</strong> — where you control and demonstrate the system working as a whole</li>
+                <li><strong>Parallel testing tasks</strong> — spin up AI for comprehensive tests in background</li>
+            </ul>
+        </div>
+
+        <!-- 18: Advanced Techniques -->
+        <div class="slide">
+            <h2>Advanced Techniques</h2>
+            <ul>
+                <li><strong>Voice mode:</strong> 150-180 wpm—signals tool mastery and understanding of AI inference</li>
+                <li><strong>Parallelism:</strong> Split work across agents or tabs</li>
+                <li><strong>Strategic depth:</strong> Spend more time on plan when you know it works</li>
+                <li><strong>Autonomy:</strong> Tell AI to make its own decisions on components</li>
+            </ul>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">18</span></span>
+            <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+
+            document.getElementById('currentSlide').textContent = currentSlide;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
