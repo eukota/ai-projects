@@ -9,7 +9,7 @@ This guide teaches you the practical strategy for solving interview problems wit
 - `01-requirements-and-design.md` — Strategy for the Requirements & Design phase
 - `02-implementation.md` — Strategy for the Implementation phase
 - `03-testing.md` — Strategy for the Testing phase
-- `04-examples.md` — Worked walkthroughs at Entry and Senior complexity levels
+- `worked-examples/` — Worked walkthroughs (poor vs. excellent prompts) plus a practice-problem index
 
 ## Universal Principles & Techniques
 
@@ -47,6 +47,15 @@ Using speech-to-text to interface with AI signals sophisticated tool mastery:
 2. Review the universal principles above before diving into examples
 3. Study the examples to see how the strategy applies to different problem complexities
 4. Practice with the mock interview agent (when available)
+
+## Resources
+
+External material on how companies now run AI-assisted technical interviews — useful for understanding what's being evaluated and for sourcing practice problems.
+
+- [Canva Engineering — Yes, You Can Use AI in Our Interviews](https://www.canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews/) — Why Canva made AI use mandatory, what good usage looks like, and the air-traffic-control example problem.
+- [Hello Interview — Meta's AI-Enabled Coding Interview](https://www.hellointerview.com/blog/meta-ai-enabled-coding) — Format, checkpoints, and the evaluation axes (control, verification, communication).
+- [interviewing.io — How to use AI in Meta's AI-assisted coding interview](https://interviewing.io/blog/how-to-use-ai-in-meta-s-ai-assisted-coding-interview-with-real-prompts-and-examples) — Real prompts and examples, including the agentic round.
+- [Coditioning — Meta AI-Enabled Coding Interview Guide](https://www.coditioning.com/blog/13/meta-ai-enabled-coding-interview-guide) — Debug-first practice problems (LRU cache, rate limiter, Card Game, Fix the Maze).
 
 ---
 
