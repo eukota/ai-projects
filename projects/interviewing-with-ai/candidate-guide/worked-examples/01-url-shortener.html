@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop: URL Shortener — Prompt Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1000px;
+            aspect-ratio: 4 / 5;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px 60px;
+            height: 100%;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-header {
+            font-size: 1.6em;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .slide h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+            line-height: 1.1;
+        }
+
+        .slide h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .slide p {
+            font-size: 1em;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .slide ul {
+            list-style: none;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .slide ul li {
+            color: #333;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .slide ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .step-label {
+            margin-top: 20px;
+            font-weight: 700;
+            color: #764ba2;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .prompt-example {
+            margin-top: 8px;
+            padding: 12px 14px;
+            background: #f5f5f5;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .prompt-text {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .prompt-poor {
+            border-left-color: #d32f2f;
+            background: #ffebee;
+        }
+
+        .prompt-good {
+            border-left-color: #388e3c;
+            background: #e8f5e9;
+        }
+
+        .prompt-label {
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+        }
+
+        .copy-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover { background: #764ba2; }
+        .prompt-poor .copy-btn { background: #d32f2f; }
+        .prompt-poor .copy-btn:hover { background: #b71c1c; }
+        .prompt-good .copy-btn { background: #388e3c; }
+        .prompt-good .copy-btn:hover { background: #2e7d32; }
+
+        .reflect {
+            margin-top: 10px;
+            padding: 10px 12px;
+            background: #fff8e1;
+            border-left: 4px solid #f5a623;
+            border-radius: 4px;
+            font-size: 0.9em;
+            line-height: 1.45;
+            color: #6b5300;
+        }
+
+        .reveal-btn {
+            margin-top: 22px;
+            background: #ede7f6;
+            color: #4527a0;
+            border: 1px solid #b39ddb;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+
+        .reveal-btn:hover { background: #d1c4e9; }
+
+        .reveal-content {
+            display: none;
+            margin-top: 14px;
+            padding: 14px 16px;
+            background: #faf8ff;
+            border: 1px solid #e0d6f5;
+            border-radius: 6px;
+        }
+
+        .reveal-content p { font-size: 0.95em; margin-bottom: 10px; }
+        .reveal-content p:last-child { margin-bottom: 0; }
+
+        .slide.title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide.title-slide h1 { color: white; font-size: 3.6em; }
+        .slide.title-slide p { color: rgba(255, 255, 255, 0.9); font-size: 1.3em; }
+
+        .section-req-design { background-color: #0288d1; color: white !important; }
+        .section-implementation { background-color: #388e3c; color: white !important; }
+        .section-testing { background-color: #f57c00; color: white !important; }
+        .section-summary { background-color: #667eea; color: white !important; }
+
+        .note {
+            margin-top: 16px;
+            padding: 12px;
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .note p { font-size: 0.9em; font-style: italic; color: #555; margin: 0; }
+
+        .say-loud {
+            margin-top: 12px;
+            padding: 10px 12px;
+            background: #e8f5e9;
+            border-left: 4px solid #388e3c;
+            border-radius: 4px;
+        }
+
+        .say-loud p { font-size: 0.9em; color: #245c2a; margin: 0; font-style: italic; }
+
+        .source-note {
+            margin-top: 20px;
+            padding: 12px;
+            background: #fafafa;
+            border-left: 4px solid #999;
+            border-radius: 4px;
+        }
+
+        .source-note p { font-size: 0.85em; color: #666; margin: 0; }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #f5f5f5;
+            border-top: 1px solid #ddd;
+        }
+
+        button.nav {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        button.nav:hover { background: #764ba2; }
+        button.nav:disabled { background: #ccc; cursor: not-allowed; }
+
+        .slide-counter { color: #667eea; font-weight: 600; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- 1: Title -->
+        <div class="slide title-slide active">
+            <h1>Prompt Lab: URL Shortener</h1>
+            <p>Run the prompts. Reflect. Then reveal why.</p>
+        </div>
+
+        <!-- 2: Problem & Source -->
+        <div class="slide">
+            <h2>The Problem</h2>
+            <p style="font-size: 1.3em;"><strong>Build a link shortener like bit.ly.</strong></p>
+            <p style="margin-top: 18px; color: #666;">Small enough that everyone understands it in one sentence — so the focus stays on <em>how you prompt</em>, not on decoding the domain. Real requirements ambiguity, genuine design choices, a bounded build, and obvious tests.</p>
+            <div class="source-note">
+                <p><strong>Source:</strong> Classic system-design / coding-interview problem, widely used across interview-prep material. Adapted here as a small, re-runnable drill — no single canonical origin.</p>
+            </div>
+        </div>
+
+        <!-- 3: How this lab works -->
+        <div class="slide">
+            <h2>How This Lab Works</h2>
+            <ul>
+                <li><strong>Open your AI tool</strong> (ChatGPT, Claude, Cursor…) in another window</li>
+                <li><strong>Each round:</strong> run the ❌ poor prompt in a <em>fresh chat</em>, then the ✅ excellent prompt in another <em>fresh chat</em></li>
+                <li><strong>Reflect</strong> on the amber questions before moving on — compare what each version gave you</li>
+                <li><strong>Then reveal</strong> the analysis and discuss it together</li>
+            </ul>
+            <div class="note">
+                <p>The point isn't the "right answer" on the slide — it's what <em>you</em> notice in the two outputs. Copy buttons put each prompt on your clipboard.</p>
+            </div>
+        </div>
+
+        <!-- 4: Round 1 -->
+        <div class="slide">
+            <div class="slide-header section-req-design">Round 1 · Requirements &amp; Design — Scoping</div>
+
+            <div class="step-label">Step 1 — Run the poor prompt (fresh chat)</div>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Poor prompt</div>
+                <div class="prompt-text">"Write me a URL shortener."</div>
+                <button class="copy-btn" data-prompt="Write me a URL shortener." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 Did it ask you anything, or just dump a generic design? Could you defend every choice it made — storage, ID scheme, scale?</div>
+
+            <div class="step-label">Step 2 — Run the excellent prompt (fresh chat)</div>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Excellent prompt</div>
+                <div class="prompt-text">"We're designing a URL shortener. Before any code, list the open requirements questions that most change the design — custom aliases, link expiration, click analytics, auth, and expected scale. Group them by how much they affect the architecture."</div>
+                <button class="copy-btn" data-prompt="We're designing a URL shortener. Before any code, list the open requirements questions that most change the design — custom aliases, link expiration, click analytics, auth, and expected scale. Group them by how much they affect the architecture." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 What decisions did it surface that you hadn't considered? Which would you defer to keep this solvable in an interview?</div>
+
+            <button class="reveal-btn" data-label="Reveal the analysis" onclick="toggleReveal(this)">Reveal the analysis ▼</button>
+            <div class="reveal-content">
+                <p><strong>Why the poor prompt fails:</strong> One-shot outsourcing. You've surrendered every decision — scope, storage, ID scheme — to the AI. Violates <strong>Active Direction</strong> and <strong>Narrative Control</strong>.</p>
+                <p><strong>Why the excellent prompt works:</strong> You use the AI to <strong>surface</strong> the decision space, then you make the calls. Ranking by architectural impact is <strong>Narrative Control</strong> — steering toward something completable in the time you have.</p>
+                <div class="say-loud"><p>🗣️ Say out loud: "I'm scoping this to a single-instance, in-memory service with optional expiry, and deferring analytics and auth. That keeps it solvable in our time box — I'll note the deferred items as future work."</p></div>
+            </div>
+        </div>
+
+        <!-- 5: Round 2 -->
+        <div class="slide">
+            <div class="slide-header section-req-design">Round 2 · Requirements &amp; Design — Short Codes</div>
+
+            <div class="step-label">Step 1 — Run the poor prompt (fresh chat)</div>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Poor prompt</div>
+                <div class="prompt-text">"What's the best way to generate the short codes?"</div>
+                <button class="copy-btn" data-prompt="What's the best way to generate the short codes for a URL shortener?" onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 Did it hand you one answer as "the best"? Did it mention tradeoffs <em>unprompted</em>, or did you just accept it?</div>
+
+            <div class="step-label">Step 2 — Run the excellent prompt (fresh chat)</div>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Excellent prompt</div>
+                <div class="prompt-text">"Compare three short-code strategies — random string, hash of the URL, and a base62-encoded counter — on collision risk, guessability, and whether identical URLs collapse to one code. I'm leaning toward base62 counter; tell me where that choice hurts."</div>
+                <button class="copy-btn" data-prompt="For a URL shortener, compare three short-code strategies — random string, hash of the URL, and a base62-encoded counter — on collision risk, guessability, and whether identical URLs collapse to one code. I'm leaning toward base62 counter; tell me where that choice hurts." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 Did the comparison change your leaning? What did it say <em>hurts</em> about base62 — and would you have caught that yourself?</div>
+
+            <button class="reveal-btn" data-label="Reveal the analysis" onclick="toggleReveal(this)">Reveal the analysis ▼</button>
+            <div class="reveal-content">
+                <p><strong>Why the poor prompt fails:</strong> "Best" invites an unexamined verdict you'll accept at face value. Violates <strong>Critical Reading</strong>.</p>
+                <p><strong>Why the excellent prompt works:</strong> You ask for a comparison against <strong>criteria you named</strong>, state your leaning, and invite the AI to attack it — <strong>Collaboration</strong> + <strong>Critical Reading</strong>. You're pressure-testing a decision, not shopping for one.</p>
+                <div class="say-loud"><p>🗣️ Say out loud: "Base62 counter gives me short, collision-free codes with trivial logic. The tradeoff is guessability and that it leaks volume — acceptable here, and I'd revisit it if links were sensitive."</p></div>
+            </div>
+        </div>
+
+        <!-- 6: Round 3 -->
+        <div class="slide">
+            <div class="slide-header section-implementation">Round 3 · Implementation — Build in Slices</div>
+
+            <div class="step-label">Step 1 — Run the poor prompt (fresh chat)</div>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Poor prompt</div>
+                <div class="prompt-text">"Now write all the code."</div>
+                <button class="copy-btn" data-prompt="Now write all the code for a URL shortener." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 How many lines came back? Could you explain every one — and defend it if an interviewer asked "why this?"</div>
+
+            <div class="step-label">Step 2 — Run the excellent prompt (fresh chat)</div>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Excellent prompt</div>
+                <div class="prompt-text">"Let's build it in slices. Start with just the two core functions: shorten(url) returning a code, and resolve(code) returning the URL or a not-found signal. Use an in-memory dict and a base62 counter. No web layer yet — I want to eyeball the core logic first."</div>
+                <button class="copy-btn" data-prompt="Let's build a URL shortener in slices. Start with just the two core functions: shorten(url) returning a code, and resolve(code) returning the URL or a not-found signal. Use an in-memory dict and a base62 counter. No web layer yet — I want to eyeball the core logic first." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 How much code came back this time? Could you review it in under a minute? Which version could you actually walk someone through?</div>
+
+            <button class="reveal-btn" data-label="Reveal the analysis" onclick="toggleReveal(this)">Reveal the analysis ▼</button>
+            <div class="reveal-content">
+                <p><strong>Why the poor prompt fails:</strong> You get several hundred lines you didn't shape and can't defend. When the interviewer asks "why this?", you're reading your own solution for the first time.</p>
+                <p><strong>Why the excellent prompt works:</strong> You delegate a well-bounded slice while keeping the design yours. You can actually read ~20 lines before moving on — <strong>Active Direction</strong> in practice.</p>
+                <div class="say-loud"><p>🗣️ Say out loud: "I'm reviewing the counter increment for a race condition — single-threaded for now, so fine, but I'm flagging it as the first thing that breaks under concurrency."</p></div>
+            </div>
+        </div>
+
+        <!-- 7: Round 4 -->
+        <div class="slide">
+            <div class="slide-header section-implementation">Round 4 · Implementation — Extending</div>
+
+            <div class="step-label">Step 1 — Run the poor prompt (continue the Step-2 chat)</div>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Poor prompt</div>
+                <div class="prompt-text">"Add expiration too."</div>
+                <button class="copy-btn" data-prompt="Add expiration too." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 Did the AI guess what "expiration" means, or assume an implementation? What did it decide <em>for</em> you?</div>
+
+            <div class="step-label">Step 2 — Run the excellent prompt instead</div>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Excellent prompt</div>
+                <div class="prompt-text">"Add optional expiry: shorten(url, ttl_seconds=None). On resolve, treat an expired code as not-found and don't auto-delete — lazy expiry is fine. Keep the not-found path identical to a missing code so we don't leak whether a code ever existed."</div>
+                <button class="copy-btn" data-prompt="Add optional expiry to the URL shortener: shorten(url, ttl_seconds=None). On resolve, treat an expired code as not-found and don't auto-delete — lazy expiry is fine. Keep the not-found path identical to a missing code so we don't leak whether a code ever existed." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 Did it honor the "don't leak whether a code existed" requirement? Would you have thought to specify that?</div>
+
+            <button class="reveal-btn" data-label="Reveal the analysis" onclick="toggleReveal(this)">Reveal the analysis ▼</button>
+            <div class="reveal-content">
+                <p><strong>Why the poor prompt fails:</strong> Vague bolt-on. You haven't said what expiry <em>means</em> here, so the AI guesses.</p>
+                <p><strong>Why the excellent prompt works:</strong> You specify the <strong>behavior, the interface, and a security nuance</strong> the AI wouldn't infer. You're using it as a fast implementer of <em>your</em> decisions.</p>
+            </div>
+        </div>
+
+        <!-- 8: Round 5 -->
+        <div class="slide">
+            <div class="slide-header section-testing">Round 5 · Testing</div>
+
+            <div class="step-label">Step 1 — Run the poor prompt (fresh chat)</div>
+            <div class="prompt-example prompt-poor">
+                <div class="prompt-label">❌ Poor prompt</div>
+                <div class="prompt-text">"Write some tests."</div>
+                <button class="copy-btn" data-prompt="Write some tests for the URL shortener." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 Are the tests happy-path only? What risky case did they skip entirely?</div>
+
+            <div class="step-label">Step 2 — Run the excellent prompt (fresh chat)</div>
+            <div class="prompt-example prompt-good">
+                <div class="prompt-label">✅ Excellent prompt</div>
+                <div class="prompt-text">"List the edge cases worth testing, ranked by likelihood of hiding a bug — collisions, resolving an unknown code, an expired code, an empty or malformed URL, and idempotency of shortening the same URL twice. Then write tests for the top four."</div>
+                <button class="copy-btn" data-prompt="List the edge cases worth testing for a URL shortener, ranked by likelihood of hiding a bug — collisions, resolving an unknown code, an expired code, an empty or malformed URL, and idempotency of shortening the same URL twice. Then write tests for the top four." onclick="copyPrompt(this)">Copy prompt</button>
+            </div>
+            <div class="reflect">🤔 Which edge case would you predict fails first? Did the AI's ranking match your instinct?</div>
+
+            <button class="reveal-btn" data-label="Reveal the analysis" onclick="toggleReveal(this)">Reveal the analysis ▼</button>
+            <div class="reveal-content">
+                <p><strong>Why the poor prompt fails:</strong> You get happy-path tests that prove nothing interesting, and you've signaled you don't know what's risky. Violates <strong>Critical Reading</strong> and <strong>Articulation</strong>.</p>
+                <p><strong>Why the excellent prompt works:</strong> You make the AI <strong>enumerate risk first</strong>, then you prioritize — you decide what "done" means. <strong>Narrative Control</strong> + <strong>Critical Reading</strong>.</p>
+                <div class="say-loud"><p>🗣️ Say out loud: "The expired-code test is the one I most expect to fail. If the not-found responses for 'expired' and 'never existed' differ, that's a leak and a bug."</p></div>
+            </div>
+        </div>
+
+        <!-- 9: Debrief -->
+        <div class="slide">
+            <div class="slide-header section-summary">Debrief</div>
+            <h2>Same Shape, Every Round</h2>
+            <ul style="font-size: 1.15em;">
+                <li>You <strong>surface</strong> options</li>
+                <li>You <strong>decide</strong></li>
+                <li>The AI <strong>executes</strong></li>
+                <li>You <strong>verify</strong></li>
+            </ul>
+            <div class="reflect" style="margin-top: 22px;">🤔 Group discussion: In which round was the gap between poor and excellent the <em>widest</em>? Where did the poor prompt fool you into thinking it was "good enough"?</div>
+            <div class="note">
+                <p>That loop — surface, decide, execute, verify — is the entire strategy in miniature, and it's exactly what the interviewer rubric scores.</p>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="nav" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">9</span></span>
+            <button class="nav" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            document.getElementById('currentSlide').textContent = currentSlide;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        function copyPrompt(btn) {
+            const text = btn.getAttribute('data-prompt');
+            const restore = () => setTimeout(() => { btn.textContent = 'Copy prompt'; }, 1500);
+            const ok = () => { btn.textContent = 'Copied ✓'; restore(); };
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(ok).catch(() => fallbackCopy(text, ok));
+            } else {
+                fallbackCopy(text, ok);
+            }
+        }
+
+        function fallbackCopy(text, ok) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try { document.execCommand('copy'); ok(); } catch (e) {}
+            document.body.removeChild(ta);
+        }
+
+        function toggleReveal(btn) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === 'block';
+            content.style.display = isOpen ? 'none' : 'block';
+            btn.textContent = (isOpen ? 'Reveal the analysis ▼' : 'Hide the analysis ▲');
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
