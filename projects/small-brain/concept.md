@@ -70,6 +70,10 @@ Learning the phase relationships between brains—how to weight them and how the
 
 PAHF is not just a component. It is the recursive pattern the whole architecture is built on.
 
+### Human Input is Passive
+
+The PAHF loop does not require the user to explicitly invoke it. Input is gathered passively as the user talks to the agent and answers questions. Hooks observe the conversation and capture correction signals automatically. The user is never in "PAHF mode"—they are simply talking.
+
 ## Memory Hierarchy
 
 | Level | Contents | How populated | How used |
@@ -102,6 +106,36 @@ Without the outer loop, memory grows unbounded and grounding degrades. With it, 
 
 **Resolved conflicts are prime compression candidates.** They reveal priority ordering between principles—the data needed to generate meta-principles.
 
+### Brain Split Trigger
+
+The compression loop is also what determines when a second brain is needed. When compression finds a persistent conflict cluster—two principle sets that consistently contradict each other and cannot be resolved into a stable meta-principle after repeated cycles—this is the signal that one brain is holding two incompatible viewing angles.
+
+When this is detected, the system surfaces a single question to the user: **"Should these be separate brains?"** The user decides. If yes, a second brain is created and the conflicting cluster is migrated to it. The trigger is passive (auto-detected by compression); the split decision is always human.
+
+## The Three Loops
+
+| Loop | Trigger | Human input |
+|---|---|---|
+| PAHF (inner) | Every action | Passive—captured from normal conversation |
+| Distillation (outer) | Periodic / volume | Passive trigger; human decides any brain split |
+| Multi-brain | Every decision | See resolution settings below |
+
+## Multi-Brain Resolution Settings
+
+When multiple brains vote, the orchestrator resolves conflicts using principles where possible. Two settings control how much autonomy the orchestrator has:
+
+**Principle auto-answer** (toggle)
+- **Auto**: When a question can be answered by an existing principle, the orchestrator applies the answer silently without asking the user.
+- **Manual**: The orchestrator surfaces the principle it would apply and asks the user to confirm before proceeding.
+
+**Multi-brain conflict resolution** (toggle)
+- **Auto**: When brains conflict and the orchestrator can resolve via principles, it does so silently.
+- **Manual**: Always escalate conflicts to the user, even if principles could resolve them.
+
+**Hard floor (always active):** When principles cannot resolve a conflict, the orchestrator always escalates to the user regardless of settings. Human override cannot be disabled at this level.
+
+The two toggles are independent. You can have auto principle answers with manual conflict resolution, or vice versa.
+
 ## Milestone Progression
 
 The system is intentionally grown, not built fully-formed. Capability milestones:
@@ -124,6 +158,30 @@ AIOS principle #5 (Context is a first-class resource) maps directly: principle e
 
 AIOS principle #7 (Composability over monoliths) maps to the coding agent side: extract deterministic code from repeated LLM patterns rather than regenerating from scratch.
 
+## Status Report
+
+The system can produce a structured status report at any time:
+
+- **Brains**: how many exist, their domains, when each was created
+- **Domain scope per brain**: what kinds of decisions each brain handles
+- **Memory state per brain**: principles extracted, confidence levels, meta-principles
+- **Decision stats**: total decisions, confirmed vs corrected, correction rate per brain
+- **Conflict history**: conflicts surfaced, how they were resolved (orchestrator vs human), unresolved conflicts
+
+The report is a point-in-time snapshot. It is the primary tool for understanding what the system has learned and where it still has gaps.
+
+## Export and Import
+
+A small brain can be exported to a portable format (JSON or structured Markdown) containing its full memory hierarchy: decisions, corrections, principles, and meta-principles. The export includes brain metadata (domain, creation date, settings) but not the conversation history that produced it.
+
+A small brain can be imported from an export. This allows:
+- Sharing a trained brain between machines or users
+- Bootstrapping a new brain from an existing one
+- Backing up and restoring brain state
+- Transferring a domain brain from one Small Brain installation to another
+
+Imported brains are treated as external until the user explicitly trusts them. Trust affects whether imported principles are applied at full confidence or treated as provisional.
+
 ## Design Principles
 
 1. Multi-brain is required, not optional—sycophancy makes single-brain architectures structurally unreliable for genuine conflict.
@@ -136,6 +194,9 @@ AIOS principle #7 (Composability over monoliths) maps to the coding agent side: 
 8. The system is grown through milestones, not built fully-formed.
 9. PAHF is the recursive pattern at every level of the architecture.
 10. Human override must always exist.
+11. Human input to the PAHF loop is always passive—never mode-switched.
+12. The brain split trigger is passive; the split decision is always human.
+13. A brain can be exported and imported as a portable artifact.
 
 ## Relationship to Existing Concepts
 
