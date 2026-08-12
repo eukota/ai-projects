@@ -22,7 +22,7 @@ You say "yes" to a side project. The system surfaces: "Your parent brain has fla
 
 Overnight Claude Code runs that escalate only genuine conflicts, not every uncertain decision.
 
-Without Small Brain, an autonomous agent must either ask about everything (waking you up) or decide everything (missing your principles). With Small Brain, it operates at your level of specificity and only escalates when multiple genuine principles conflict.
+Without Meldwerkes, an autonomous agent must either ask about everything (waking you up) or decide everything (missing your principles). With Meldwerkes, it operates at your level of specificity and only escalates when multiple genuine principles conflict.
 
 ## Long-Term Preference Drift Detection
 
@@ -40,7 +40,7 @@ A system that understands your decision-making well enough to:
 
 ## Team Decision Coordination
 
-A system where multiple people can each have a Small Brain, and their brains can be composed to coordinate decisions at the group level.
+A system where multiple people can each have a Meldwerkes, and their brains can be composed to coordinate decisions at the group level.
 
 Each team member's brain operates independently. When decisions affect multiple people, their brains' positions are surfaced and reconciled. The team learns not just what was decided, but what principles competed and how they were weighted.
 
@@ -48,7 +48,7 @@ Each team member's brain operates independently. When decisions affect multiple 
 
 A realistic first version may include:
 
-- Single small brain (one domain)
+- Single meldwerkes (one domain)
 - PAHF interrogation loop (clarify → ground → correct)
 - Simple memory store (decisions, corrections)
 - Manual compression loop (human-triggered, human-guided)

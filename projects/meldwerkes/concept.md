@@ -1,8 +1,8 @@
-# Small Brain Concept
+# Meldwerkes Concept
 
 ## Thesis
 
-Small Brain is a multi-agent cognitive architecture that builds a personalized decision model of a human by learning their preferences, principles, and meta-priorities through structured interrogation, compression, and conflict resolution.
+Meldwerkes is a multi-agent cognitive architecture that builds a personalized decision model of a human by learning their preferences, principles, and meta-priorities through structured interrogation, compression, and conflict resolution.
 
 ## Why Single-Brain Architectures Fail
 
@@ -14,7 +14,7 @@ Current AI usage treats models as stateless tools. Even advanced agent framework
 
 ## The Decision Team Architecture
 
-Small Brain is not a single agent. It is a **team of small brains**—each a focused, independently trained cognitive agent covering a specific domain or viewing angle of the user's decision-making.
+Meldwerkes is not a single agent. It is a **team of meldwerkess**—each a focused, independently trained cognitive agent covering a specific domain or viewing angle of the user's decision-making.
 
 ### How It Works
 
@@ -29,7 +29,7 @@ The user resolves hard conflicts. That resolution becomes the richest training s
 
 ### Why Structural Isolation is Required
 
-Separate small brains:
+Separate meldwerkess:
 - Are trained independently on specific domains
 - Never share context with each other during deliberation
 - Cannot sycophantically converge because they never hear each other capitulating
@@ -39,11 +39,11 @@ This is the same reason red teams and design reviews work: isolate critics from 
 
 ## The Fourier Analogy
 
-Any complex function can be approximated to arbitrary precision by summing enough simple wave components (Fourier series). Small Brain applies the same principle:
+Any complex function can be approximated to arbitrary precision by summing enough simple wave components (Fourier series). Meldwerkes applies the same principle:
 
-| Fourier | Small Brain |
+| Fourier | Meldwerkes |
 |---|---|
-| Basis function | Individual small brain (domain) |
+| Basis function | Individual meldwerkes (domain) |
 | Frequency | Viewing angle / domain |
 | Coefficient / weight | Orchestrator weighting |
 | Interference | Conflict between brains |
@@ -54,7 +54,7 @@ You don't need infinite brains—you need enough to approximate the function to 
 
 ## The PAHF Loop
 
-Small Brain is built on PAHF (Personalized Agents from Human Feedback)—a 3-step loop:
+Meldwerkes is built on PAHF (Personalized Agents from Human Feedback)—a 3-step loop:
 
 1. **Pre-action clarification** — ask before acting
 2. **Grounding in memory** — check prior decisions/principles before answering
@@ -62,13 +62,17 @@ Small Brain is built on PAHF (Personalized Agents from Human Feedback)—a 3-ste
 
 This loop runs at two levels:
 
-**Level 1—inside each small brain**
+**Level 1—inside each meldwerkes**
 Learning domain-specific preferences. The Fourier component itself.
 
 **Level 2—inside the orchestrator**
 Learning the phase relationships between brains—how to weight them and how they interfere. What it learns are meta-preferences: how the user prioritizes between competing worldviews.
 
 PAHF is not just a component. It is the recursive pattern the whole architecture is built on.
+
+### Human Input is Passive
+
+The PAHF loop does not require the user to explicitly invoke it. Input is gathered passively as the user talks to the agent and answers questions. Hooks observe the conversation and capture correction signals automatically. The user is never in "PAHF mode"—they are simply talking.
 
 ## Memory Hierarchy
 
@@ -102,13 +106,43 @@ Without the outer loop, memory grows unbounded and grounding degrades. With it, 
 
 **Resolved conflicts are prime compression candidates.** They reveal priority ordering between principles—the data needed to generate meta-principles.
 
+### Brain Split Trigger
+
+The compression loop is also what determines when a second brain is needed. When compression finds a persistent conflict cluster—two principle sets that consistently contradict each other and cannot be resolved into a stable meta-principle after repeated cycles—this is the signal that one brain is holding two incompatible viewing angles.
+
+When this is detected, the system surfaces a single question to the user: **"Should these be separate brains?"** The user decides. If yes, a second brain is created and the conflicting cluster is migrated to it. The trigger is passive (auto-detected by compression); the split decision is always human.
+
+## The Three Loops
+
+| Loop | Trigger | Human input |
+|---|---|---|
+| PAHF (inner) | Every action | Passive—captured from normal conversation |
+| Distillation (outer) | Periodic / volume | Passive trigger; human decides any brain split |
+| Multi-brain | Every decision | See resolution settings below |
+
+## Multi-Brain Resolution Settings
+
+When multiple brains vote, the orchestrator resolves conflicts using principles where possible. Two settings control how much autonomy the orchestrator has:
+
+**Principle auto-answer** (toggle)
+- **Auto**: When a question can be answered by an existing principle, the orchestrator applies the answer silently without asking the user.
+- **Manual**: The orchestrator surfaces the principle it would apply and asks the user to confirm before proceeding.
+
+**Multi-brain conflict resolution** (toggle)
+- **Auto**: When brains conflict and the orchestrator can resolve via principles, it does so silently.
+- **Manual**: Always escalate conflicts to the user, even if principles could resolve them.
+
+**Hard floor (always active):** When principles cannot resolve a conflict, the orchestrator always escalates to the user regardless of settings. Human override cannot be disabled at this level.
+
+The two toggles are independent. You can have auto principle answers with manual conflict resolution, or vice versa.
+
 ## Milestone Progression
 
 The system is intentionally grown, not built fully-formed. Capability milestones:
 
-1. Single small brain, single domain, interrogation loop only
+1. Single meldwerkes, single domain, interrogation loop only
 2. Compression loop runs, principles extracted
-3. Second small brain added, first conflict surfaced
+3. Second meldwerkes added, first conflict surfaced
 4. Orchestrator learns to weight brains from resolved conflicts
 5. Meta-principles extracted from conflict resolution patterns
 6. Brain controls a single coding agent
@@ -118,11 +152,35 @@ The system is intentionally grown, not built fully-formed. Capability milestones
 
 ## Relationship to AIOS
 
-Small Brain is the **cognitive kernel** of AIOS. Where AIOS defines the operating environment (scheduler, memory, tools, permissions, observability), Small Brain defines how the system develops and applies a model of the user's decision-making within that environment.
+Meldwerkes is the **cognitive kernel** of AIOS. Where AIOS defines the operating environment (scheduler, memory, tools, permissions, observability), Meldwerkes defines how the system develops and applies a model of the user's decision-making within that environment.
 
 AIOS principle #5 (Context is a first-class resource) maps directly: principle extraction is context compression—actively managing the context budget by lifting repeated patterns into higher-level abstractions.
 
 AIOS principle #7 (Composability over monoliths) maps to the coding agent side: extract deterministic code from repeated LLM patterns rather than regenerating from scratch.
+
+## Status Report
+
+The system can produce a structured status report at any time:
+
+- **Brains**: how many exist, their domains, when each was created
+- **Domain scope per brain**: what kinds of decisions each brain handles
+- **Memory state per brain**: principles extracted, confidence levels, meta-principles
+- **Decision stats**: total decisions, confirmed vs corrected, correction rate per brain
+- **Conflict history**: conflicts surfaced, how they were resolved (orchestrator vs human), unresolved conflicts
+
+The report is a point-in-time snapshot. It is the primary tool for understanding what the system has learned and where it still has gaps.
+
+## Export and Import
+
+A meldwerkes can be exported to a portable format (JSON or structured Markdown) containing its full memory hierarchy: decisions, corrections, principles, and meta-principles. The export includes brain metadata (domain, creation date, settings) but not the conversation history that produced it.
+
+A meldwerkes can be imported from an export. This allows:
+- Sharing a trained brain between machines or users
+- Bootstrapping a new brain from an existing one
+- Backing up and restoring brain state
+- Transferring a domain brain from one Meldwerkes installation to another
+
+Imported brains are treated as external until the user explicitly trusts them. Trust affects whether imported principles are applied at full confidence or treated as provisional.
 
 ## Design Principles
 
@@ -136,9 +194,12 @@ AIOS principle #7 (Composability over monoliths) maps to the coding agent side: 
 8. The system is grown through milestones, not built fully-formed.
 9. PAHF is the recursive pattern at every level of the architecture.
 10. Human override must always exist.
+11. Human input to the PAHF loop is always passive—never mode-switched.
+12. The brain split trigger is passive; the split decision is always human.
+13. A brain can be exported and imported as a portable artifact.
 
 ## Relationship to Existing Concepts
 
-Small Brain overlaps with multi-agent systems, decision theory, cognitive science, behavioral economics, knowledge representation, active learning, and alignment research.
+Meldwerkes overlaps with multi-agent systems, decision theory, cognitive science, behavioral economics, knowledge representation, active learning, and alignment research.
 
 It is narrower than those fields—focused on a specific pattern: personal decision modeling through structural isolation and conflict resolution—and yet broader in scope than any of them.
