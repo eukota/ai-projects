@@ -1,14 +1,14 @@
-# Small Brain
+# Meldwerkes
 
 Status: Concept / Incubating
 
 ## Summary
 
-Small Brain is a multi-agent cognitive architecture that builds a personalized decision model of a human by learning their preferences, principles, and meta-priorities through structured interrogation, compression, and conflict resolution.
+Meldwerkes is a multi-agent cognitive architecture that builds a personalized decision model of a human by learning their preferences, principles, and meta-priorities through structured interrogation, compression, and conflict resolution.
 
 It treats human decision-making not as a single optimizable priority stack, but as a team of specialized, isolated cognitive agents—each representing a genuine worldview or domain of expertise—that deliberate independently and broadcast their positions simultaneously.
 
-Small Brain is not a single AI that learns your preferences. It is a structured system of small cognitive agents that vote blind, surface genuine conflicts instead of sycophantically converging, and grow progressively more capable through principled compression of decision patterns.
+Meldwerkes is not a single AI that learns your preferences. It is a structured system of small cognitive agents that vote blind, surface genuine conflicts instead of sycophantically converging, and grow progressively more capable through principled compression of decision patterns.
 
 ## Core Problem
 
@@ -20,7 +20,7 @@ Current AI systems treat users as having a single, coherent priority system. Thi
 
 ## Solution: The Decision Team
 
-Small Brain solves this through **structural isolation**—separate small brains, trained independently on specific domains, that deliberate without hearing each other until all positions are collected.
+Meldwerkes solves this through **structural isolation**—separate meldwerkess, trained independently on specific domains, that deliberate without hearing each other until all positions are collected.
 
 Every decision broadcasts to all brains. Each brain returns a position. The orchestrator identifies consensus (silent), soft conflicts (picked and queued for review), and hard conflicts (surfaced to the user with full reasoning). The user resolves hard conflicts. That resolution becomes the richest training signal in the system—it reveals which principle wins when two legitimate ones compete.
 
@@ -42,6 +42,8 @@ Every decision broadcasts to all brains. Each brain returns a position. The orch
 - [Concept](concept.md)
 - [Use Cases](use-cases.md)
 - [Open Questions](open-questions.md)
+- [Futures](futures.md) — level of abstraction, directions, what a mind still lacks
+- [Working Notes](notes.md) — bootstrapping, weight tuning, autonomy settings
 - [Related Repositories](related-repos.md)
 
 ## Core Architecture
@@ -57,5 +59,5 @@ See [Concept](concept.md) for:
 ## Non-Goals
 
 - This folder is not an implementation repository.
-- Small Brain implementations should live in separate repos and be linked here.
-- Small Brain is not a product, vendor platform, or AGI claim.
+- Meldwerkes implementations should live in separate repos and be linked here.
+- Meldwerkes is not a product, vendor platform, or AGI claim.

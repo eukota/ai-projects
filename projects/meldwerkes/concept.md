@@ -1,8 +1,8 @@
-# Small Brain Concept
+# Meldwerkes Concept
 
 ## Thesis
 
-Small Brain is a multi-agent cognitive architecture that builds a personalized decision model of a human by learning their preferences, principles, and meta-priorities through structured interrogation, compression, and conflict resolution.
+Meldwerkes is a multi-agent cognitive architecture that builds a personalized decision model of a human by learning their preferences, principles, and meta-priorities through structured interrogation, compression, and conflict resolution.
 
 ## Why Single-Brain Architectures Fail
 
@@ -14,7 +14,7 @@ Current AI usage treats models as stateless tools. Even advanced agent framework
 
 ## The Decision Team Architecture
 
-Small Brain is not a single agent. It is a **team of small brains**—each a focused, independently trained cognitive agent covering a specific domain or viewing angle of the user's decision-making.
+Meldwerkes is not a single agent. It is a **team of meldwerkess**—each a focused, independently trained cognitive agent covering a specific domain or viewing angle of the user's decision-making.
 
 ### How It Works
 
@@ -29,7 +29,7 @@ The user resolves hard conflicts. That resolution becomes the richest training s
 
 ### Why Structural Isolation is Required
 
-Separate small brains:
+Separate meldwerkess:
 - Are trained independently on specific domains
 - Never share context with each other during deliberation
 - Cannot sycophantically converge because they never hear each other capitulating
@@ -39,11 +39,11 @@ This is the same reason red teams and design reviews work: isolate critics from 
 
 ## The Fourier Analogy
 
-Any complex function can be approximated to arbitrary precision by summing enough simple wave components (Fourier series). Small Brain applies the same principle:
+Any complex function can be approximated to arbitrary precision by summing enough simple wave components (Fourier series). Meldwerkes applies the same principle:
 
-| Fourier | Small Brain |
+| Fourier | Meldwerkes |
 |---|---|
-| Basis function | Individual small brain (domain) |
+| Basis function | Individual meldwerkes (domain) |
 | Frequency | Viewing angle / domain |
 | Coefficient / weight | Orchestrator weighting |
 | Interference | Conflict between brains |
@@ -54,7 +54,7 @@ You don't need infinite brains—you need enough to approximate the function to 
 
 ## The PAHF Loop
 
-Small Brain is built on PAHF (Personalized Agents from Human Feedback)—a 3-step loop:
+Meldwerkes is built on PAHF (Personalized Agents from Human Feedback)—a 3-step loop:
 
 1. **Pre-action clarification** — ask before acting
 2. **Grounding in memory** — check prior decisions/principles before answering
@@ -62,7 +62,7 @@ Small Brain is built on PAHF (Personalized Agents from Human Feedback)—a 3-ste
 
 This loop runs at two levels:
 
-**Level 1—inside each small brain**
+**Level 1—inside each meldwerkes**
 Learning domain-specific preferences. The Fourier component itself.
 
 **Level 2—inside the orchestrator**
@@ -140,9 +140,9 @@ The two toggles are independent. You can have auto principle answers with manual
 
 The system is intentionally grown, not built fully-formed. Capability milestones:
 
-1. Single small brain, single domain, interrogation loop only
+1. Single meldwerkes, single domain, interrogation loop only
 2. Compression loop runs, principles extracted
-3. Second small brain added, first conflict surfaced
+3. Second meldwerkes added, first conflict surfaced
 4. Orchestrator learns to weight brains from resolved conflicts
 5. Meta-principles extracted from conflict resolution patterns
 6. Brain controls a single coding agent
@@ -152,7 +152,7 @@ The system is intentionally grown, not built fully-formed. Capability milestones
 
 ## Relationship to AIOS
 
-Small Brain is the **cognitive kernel** of AIOS. Where AIOS defines the operating environment (scheduler, memory, tools, permissions, observability), Small Brain defines how the system develops and applies a model of the user's decision-making within that environment.
+Meldwerkes is the **cognitive kernel** of AIOS. Where AIOS defines the operating environment (scheduler, memory, tools, permissions, observability), Meldwerkes defines how the system develops and applies a model of the user's decision-making within that environment.
 
 AIOS principle #5 (Context is a first-class resource) maps directly: principle extraction is context compression—actively managing the context budget by lifting repeated patterns into higher-level abstractions.
 
@@ -172,13 +172,13 @@ The report is a point-in-time snapshot. It is the primary tool for understanding
 
 ## Export and Import
 
-A small brain can be exported to a portable format (JSON or structured Markdown) containing its full memory hierarchy: decisions, corrections, principles, and meta-principles. The export includes brain metadata (domain, creation date, settings) but not the conversation history that produced it.
+A meldwerkes can be exported to a portable format (JSON or structured Markdown) containing its full memory hierarchy: decisions, corrections, principles, and meta-principles. The export includes brain metadata (domain, creation date, settings) but not the conversation history that produced it.
 
-A small brain can be imported from an export. This allows:
+A meldwerkes can be imported from an export. This allows:
 - Sharing a trained brain between machines or users
 - Bootstrapping a new brain from an existing one
 - Backing up and restoring brain state
-- Transferring a domain brain from one Small Brain installation to another
+- Transferring a domain brain from one Meldwerkes installation to another
 
 Imported brains are treated as external until the user explicitly trusts them. Trust affects whether imported principles are applied at full confidence or treated as provisional.
 
@@ -200,6 +200,6 @@ Imported brains are treated as external until the user explicitly trusts them. T
 
 ## Relationship to Existing Concepts
 
-Small Brain overlaps with multi-agent systems, decision theory, cognitive science, behavioral economics, knowledge representation, active learning, and alignment research.
+Meldwerkes overlaps with multi-agent systems, decision theory, cognitive science, behavioral economics, knowledge representation, active learning, and alignment research.
 
 It is narrower than those fields—focused on a specific pattern: personal decision modeling through structural isolation and conflict resolution—and yet broader in scope than any of them.

@@ -9,7 +9,7 @@ the work without re-explaining everything. Read this before taking any action.
 
 ## Your Task
 
-Create a new project folder at `projects/small-brain/` following the same documentation
+Create a new project folder at `projects/meldwerkes/` following the same documentation
 structure as `projects/aios/`. The folder should contain:
 
 - `README.md`
@@ -34,11 +34,11 @@ See `projects/aios/concept.md` for the canonical style. Key patterns:
 
 ---
 
-## Full Concept: Small Brain
+## Full Concept: Meldwerkes
 
 ### One-Line Thesis
 
-Small Brain is a multi-agent cognitive architecture that builds a personalized decision
+Meldwerkes is a multi-agent cognitive architecture that builds a personalized decision
 model of a human by learning their preferences, principles, and meta-priorities through
 structured interrogation, compression, and conflict resolution.
 
@@ -57,7 +57,7 @@ a single priority system that can be learned. This fails because:
 
 ### Core Architecture: The Decision Team
 
-Small Brain is not a single agent. It is a **team of small brains** — each a focused,
+Meldwerkes is not a single agent. It is a **team of meldwerkess** — each a focused,
 independently trained cognitive agent covering a specific domain or viewing angle of the
 user's decision-making.
 
@@ -74,7 +74,7 @@ the system — it reveals which principle wins when two legitimate ones compete.
 
 ### Why Multi-Brain is Required (Not Optional)
 
-Structural isolation is the mechanism. Separate small brains:
+Structural isolation is the mechanism. Separate meldwerkess:
 - Are trained independently on specific domains
 - Never share context with each other during deliberation
 - Cannot sycophantically converge because they never hear each other capitulating
@@ -86,11 +86,11 @@ other so social pressure cannot suppress genuine dissent.
 ### The Fourier Analogy
 
 Any complex function can be approximated to arbitrary precision by summing enough simple
-wave components (Fourier series). Small Brain applies the same principle:
+wave components (Fourier series). Meldwerkes applies the same principle:
 
-| Fourier | Small Brain |
+| Fourier | Meldwerkes |
 |---|---|
-| Basis function | Individual small brain (domain) |
+| Basis function | Individual meldwerkes (domain) |
 | Frequency | Viewing angle / domain |
 | Coefficient / weight | Orchestrator weighting |
 | Interference | Conflict between brains |
@@ -102,7 +102,7 @@ precision. The compression loop finds the minimum set.
 
 ### The PAHF Loop
 
-Small Brain is built on the PAHF (Personalized Agents from Human Feedback) 3-step loop:
+Meldwerkes is built on the PAHF (Personalized Agents from Human Feedback) 3-step loop:
 
 1. **Pre-action clarification** — ask before acting
 2. **Grounding in memory** — check prior decisions/principles before answering
@@ -110,7 +110,7 @@ Small Brain is built on the PAHF (Personalized Agents from Human Feedback) 3-ste
 
 This loop runs at two levels:
 
-**Level 1 — inside each small brain**
+**Level 1 — inside each meldwerkes**
 Learning domain-specific preferences. The Fourier component itself.
 
 **Level 2 — inside the orchestrator**
@@ -160,9 +160,9 @@ between principles — the data needed to generate meta-principles.
 
 The system is intentionally grown, not built fully-formed. Capability milestones:
 
-1. Single small brain, single domain, interrogation loop only
+1. Single meldwerkes, single domain, interrogation loop only
 2. Compression loop runs, principles extracted
-3. Second small brain added, first conflict surfaced
+3. Second meldwerkes added, first conflict surfaced
 4. Orchestrator learns to weight brains from resolved conflicts
 5. Meta-principles extracted from conflict resolution patterns
 6. Brain controls a single coding agent
@@ -173,8 +173,8 @@ The system is intentionally grown, not built fully-formed. Capability milestones
 
 ### Relationship to AIOS
 
-Small Brain is the **cognitive kernel** of AIOS. Where AIOS defines the operating
-environment (scheduler, memory, tools, permissions, observability), Small Brain defines
+Meldwerkes is the **cognitive kernel** of AIOS. Where AIOS defines the operating
+environment (scheduler, memory, tools, permissions, observability), Meldwerkes defines
 how the system develops and applies a model of the user's decision-making within that
 environment.
 
@@ -206,19 +206,19 @@ deterministic code from repeated LLM patterns rather than regenerating from scra
 
 - **PAHF** (Meta AI Research, Feb 2026) — Personalized Agents from Human Feedback.
   3-step loop: pre-action clarification, grounding in memory, post-action correction.
-  Memory backends: SQLite, FAISS. Available on GitHub. Small Brain extends and
+  Memory backends: SQLite, FAISS. Available on GitHub. Meldwerkes extends and
   multi-instantiates this pattern.
 - **modAL** — Active learning framework on scikit-learn. Lighter alternative for simpler
   interrogation loops.
-- **AIOS** (`projects/aios/`) — This repo. Small Brain is its cognitive kernel.
+- **AIOS** (`projects/aios/`) — This repo. Meldwerkes is its cognitive kernel.
 - **dot-star-engine** (`projects/dot-star-engine/`) — Swarm orchestration engine.
-  Small Brain's orchestrator layer is a natural integration target.
+  Meldwerkes's orchestrator layer is a natural integration target.
 
 ---
 
 ## Open Questions to Capture in open-questions.md
 
-- What is the right domain decomposition for the first set of small brains?
+- What is the right domain decomposition for the first set of meldwerkess?
   (Domain-based: SRE, maker, parent — or cognitive-mode-based: risk evaluator,
   opportunity seeker, efficiency optimizer?)
 - What is the minimum number of brains needed for a useful approximation?
@@ -228,7 +228,7 @@ deterministic code from repeated LLM patterns rather than regenerating from scra
   isolated?
 - How is the blind voting mechanism enforced technically?
 - What does the conflict surfacing UI/interface look like?
-- How does Small Brain integrate with Claude Code's CLAUDE.md / project context system?
+- How does Meldwerkes integrate with Claude Code's CLAUDE.md / project context system?
 
 ---
 
@@ -252,5 +252,5 @@ deterministic code from repeated LLM patterns rather than regenerating from scra
 - Do not start building code yet. Documentation only for this session.
 - Match the AIOS doc style from `projects/aios/concept.md` exactly.
 - Use the content above as the source of truth. Do not invent concepts not described here.
-- Create all files under `projects/small-brain/`.
+- Create all files under `projects/meldwerkes/`.
 - After creating the files, confirm what was created and ask if any section needs revision.
