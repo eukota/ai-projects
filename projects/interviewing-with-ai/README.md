@@ -24,6 +24,14 @@ Interactive AI agent for practicing interviews. The agent simulates an interview
 
 **Location:** `mock-interview-agent/`
 
+### Question Bank
+
+Full-stack exercises for the 60-minute build segment of the two-hour AI interview class: 8 small problems solved twice with different approaches, and 8 medium problems solved once then changed to expose an assumption.
+
+*Status: small 04 and medium 01 fully written; the rest are stubs.*
+
+**Location:** `question-bank/`
+
 ### Interviewer Rubric
 
 Evaluation framework for assessing candidates in AI-assisted technical interviews. What interviewers look for and how to evaluate performance across different dimensions.
