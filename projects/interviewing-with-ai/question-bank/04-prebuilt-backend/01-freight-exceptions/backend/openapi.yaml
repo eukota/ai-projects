@@ -1,0 +1,227 @@
+openapi: 3.0.3
+info:
+  title: Freight Exceptions API
+  version: 1.0.0
+  description: |
+    Shipments, the customers who own them, and the exceptions (customs holds,
+    damage, delays, address problems) that dispatchers work through.
+    Data is in memory. `POST /api/admin/reset` restores the seed data.
+servers:
+  - url: http://localhost:4000
+paths:
+  /api/health:
+    get:
+      summary: Liveness check
+      responses:
+        "200": { description: OK }
+  /api/customers:
+    get:
+      summary: List customers
+      responses:
+        "200":
+          description: All customers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items: { $ref: "#/components/schemas/Customer" }
+  /api/shipments:
+    get:
+      summary: List shipments (paginated)
+      parameters:
+        - { name: status, in: query, schema: { $ref: "#/components/schemas/Status" } }
+        - { name: customerId, in: query, schema: { type: string } }
+        - { name: assignedTo, in: query, description: A dispatcher name, or `none` for unassigned, schema: { type: string } }
+        - { name: q, in: query, description: Substring match on id, origin or destination, schema: { type: string } }
+        - { name: page, in: query, schema: { type: integer, default: 1 } }
+        - { name: pageSize, in: query, schema: { type: integer, default: 10, maximum: 50 } }
+      responses:
+        "200":
+          description: A page of shipments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items: { $ref: "#/components/schemas/Shipment" }
+                  page: { type: integer }
+                  pageSize: { type: integer }
+                  total: { type: integer }
+  /api/shipments/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      summary: Shipment detail with its event history
+      responses:
+        "200":
+          description: The shipment
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ShipmentDetail" }
+        "404": { $ref: "#/components/responses/Error" }
+    patch:
+      summary: Change a shipment's status and/or assignee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status: { $ref: "#/components/schemas/Status" }
+                assignedTo:
+                  type: string
+                  nullable: true
+                  enum: [Rom, Brunt, Gaila, Krax]
+      responses:
+        "200":
+          description: The updated shipment
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ShipmentDetail" }
+        "400": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+        "409":
+          description: The requested status change is not allowed from the current status
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorBody" }
+  /api/shipments/{id}/exceptions:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    post:
+      summary: Open an exception on a shipment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [kind]
+              properties:
+                kind: { $ref: "#/components/schemas/ExceptionKind" }
+                note: { type: string }
+      responses:
+        "201":
+          description: The new exception
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Exception" }
+        "400": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/exceptions:
+    get:
+      summary: List exceptions across all shipments
+      parameters:
+        - { name: state, in: query, schema: { type: string, enum: [open, resolved, all], default: open } }
+        - { name: severity, in: query, schema: { type: string, enum: [medium, high] } }
+      responses:
+        "200":
+          description: Exceptions, oldest first
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items: { $ref: "#/components/schemas/Exception" }
+  /api/exceptions/{id}/resolve:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    post:
+      summary: Resolve an exception
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [resolution]
+              properties:
+                resolution: { type: string }
+      responses:
+        "200":
+          description: The resolved exception
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Exception" }
+        "400": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/admin/reset:
+    post:
+      summary: Restore the seed data
+      responses:
+        "200": { description: Data reset }
+components:
+  responses:
+    Error:
+      description: Error
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/ErrorBody" }
+  schemas:
+    ErrorBody:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code: { type: string }
+            message: { type: string }
+    Status:
+      type: string
+      enum: [booked, in_transit, at_customs, out_for_delivery, delivered]
+    ExceptionKind:
+      type: string
+      enum: [customs_hold, damaged, delayed, address_issue]
+    Customer:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        tier: { type: string, enum: [standard, priority] }
+    Shipment:
+      type: object
+      properties:
+        id: { type: string, example: S-1004 }
+        customerId: { type: string }
+        origin: { type: string }
+        destination: { type: string }
+        status: { $ref: "#/components/schemas/Status" }
+        weightKg: { type: number }
+        eta: { type: string, format: date-time }
+        assignedTo: { type: string, nullable: true }
+        createdAt: { type: string, format: date-time }
+        openExceptionCount: { type: integer }
+    ShipmentDetail:
+      allOf:
+        - $ref: "#/components/schemas/Shipment"
+        - type: object
+          properties:
+            events:
+              type: array
+              items:
+                type: object
+                properties:
+                  id: { type: string }
+                  type: { type: string }
+                  note: { type: string }
+                  at: { type: string, format: date-time }
+    Exception:
+      type: object
+      properties:
+        id: { type: string }
+        shipmentId: { type: string }
+        kind: { $ref: "#/components/schemas/ExceptionKind" }
+        severity: { type: string, enum: [medium, high] }
+        note: { type: string }
+        openedAt: { type: string, format: date-time }
+        resolvedAt: { type: string, format: date-time, nullable: true }
+        resolution: { type: string, nullable: true }
