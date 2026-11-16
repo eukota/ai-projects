@@ -7,7 +7,7 @@ Full-stack exercises for the 60-minute build segment of the two-hour AI intervie
 - [01-shared](./01-shared/) — pacing, comparison rubric, and starter-app assumptions used by every exercise.
 - [02-small](./02-small/) — 8 problems solved twice in the hour with different approaches.
 - [03-medium](./03-medium/) — 8 problems solved once, then changed to expose an assumption.
-- [04-prebuilt-backend](./04-prebuilt-backend/) — a supplied API, docs and brief; the candidate builds the frontend.
+- [04-prebuilt-backend](./04-prebuilt-backend/) — a supplied API, docs and brief; the candidate builds the frontend. 01 is self-practice; 02 is interviewer-run and changes the API mid-session.
 
 ## Choosing an exercise
 
@@ -16,6 +16,7 @@ Full-stack exercises for the 60-minute build segment of the two-hour AI intervie
 | New students, or a topic that needs a clear contrast | Small: run two approaches and compare |
 | Experienced students, or a topic about iteration and diagnosis | Medium: one build, then the follow-up change |
 | Practicing the "prototype on a supplied backend" interview | Pre-built backend 01 (freight exceptions) |
+| Practicing that interview with a live API change, with an interviewer available | Pre-built backend 02 (Tycho contract drift) |
 | No preference | Small 04 (office-hours queue) or medium 01 (appointment booking), the suggested starters |
 
 ## Status
