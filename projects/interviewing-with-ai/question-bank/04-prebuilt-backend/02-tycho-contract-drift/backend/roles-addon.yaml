@@ -1,0 +1,92 @@
+# Merged into the served spec only while the "roles" add-on is on.
+description: |
+  ## Sign in required (security release)
+  Every `/api` call except `/api/health` now needs `Authorization: Bearer <token>`.
+  Get a token from `POST /api/auth/login` with an email from the sample logins below. No password in this demo.
+
+  | Role | Email | Sees |
+  | --- | --- | --- |
+  | admin | scott@tycho.example | everything, can change anything |
+  | admin | uhura@tycho.example | everything, can change anything |
+  | shipper | ops@pilbara-ridge.example | shipments they ship (Pilbara Ridge Mining) |
+  | shipper | dispatch@rbm-coop.example | shipments they ship (Richards Bay Minerals Co-op) |
+  | receiver | engineering@starfleet-engineers.example | shipments addressed to Starfleet Corps of Engineers |
+  | receiver | labs@daystrom.example | shipments addressed to Daystrom Institute |
+  | receiver | geology@academy.example | shipments addressed to Starfleet Academy Geology Dept |
+
+  Shippers and receivers can read their own shipments and add shared notes. Only admins change status or assignee,
+  open or resolve exceptions, and write internal notes. A shipment that is not yours returns 403.
+paths:
+  /api/auth/login:
+    post:
+      summary: Sign in with an email, get a bearer token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object, required: [email], properties: { email: { type: string } } }
+      responses:
+        "200":
+          description: Token and the signed-in user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: { type: string }
+                  user: { $ref: "#/components/schemas/User" }
+        "401": { $ref: "#/components/responses/Error" }
+  /api/shipments/{id}/notes:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      summary: Notes on a shipment, oldest first
+      responses:
+        "200":
+          description: Notes the caller may see
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: { type: array, items: { $ref: "#/components/schemas/Note" } }
+        "403": { $ref: "#/components/responses/Error" }
+    post:
+      summary: Add a note
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [body]
+              properties:
+                body: { type: string }
+                visibility: { type: string, enum: [shared, internal], default: shared }
+      responses:
+        "201":
+          description: The new note
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Note" }
+        "400": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        email: { type: string }
+        role: { type: string, enum: [admin, shipper, receiver] }
+        orgId: { type: string, nullable: true }
+    Note:
+      type: object
+      properties:
+        id: { type: string }
+        shipmentId: { type: string }
+        body: { type: string }
+        visibility: { type: string, enum: [shared, internal] }
+        createdAt: { type: string, format: date-time }
+        author: { type: object, properties: { id: { type: string }, name: { type: string }, role: { type: string } } }
