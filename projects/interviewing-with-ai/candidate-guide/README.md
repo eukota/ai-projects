@@ -56,6 +56,7 @@ External material on how companies now run AI-assisted technical interviews — 
 - [Hello Interview — Meta's AI-Enabled Coding Interview](https://www.hellointerview.com/blog/meta-ai-enabled-coding) — Format, checkpoints, and the evaluation axes (control, verification, communication).
 - [interviewing.io — How to use AI in Meta's AI-assisted coding interview](https://interviewing.io/blog/how-to-use-ai-in-meta-s-ai-assisted-coding-interview-with-real-prompts-and-examples) — Real prompts and examples, including the agentic round.
 - [Coditioning — Meta AI-Enabled Coding Interview Guide](https://www.coditioning.com/blog/13/meta-ai-enabled-coding-interview-guide) — Debug-first practice problems (LRU cache, rate limiter, Card Game, Fix the Maze).
+- [Nyrion](https://nyrion.ai) — Mock AI-assisted coding rounds on multi-file codebases that grow in stages: an AI assistant in the editor proposes changes you accept or reject, and an interviewer asks about your code once each stage passes. Freemium.
 
 ---
 
